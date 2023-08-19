@@ -36,7 +36,7 @@
             this.midNameLabel = new System.Windows.Forms.Label();
             this.midNameField = new System.Windows.Forms.TextBox();
             this.IINLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.IINField = new System.Windows.Forms.TextBox();
             this.labelPanel = new System.Windows.Forms.Panel();
             this.labelPanel.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,7 @@
             this.createNewEmployee.TabIndex = 0;
             this.createNewEmployee.Text = "Добавить сотрудника";
             this.createNewEmployee.UseVisualStyleBackColor = true;
+            this.createNewEmployee.Click += new System.EventHandler(this.createNewEmployee_Click);
             // 
             // nameLabel
             // 
@@ -62,14 +63,14 @@
             // 
             // nameField
             // 
-            this.nameField.Location = new System.Drawing.Point(388, 135);
+            this.nameField.Location = new System.Drawing.Point(388, 160);
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(173, 20);
             this.nameField.TabIndex = 2;
             // 
             // surnameField
             // 
-            this.surnameField.Location = new System.Drawing.Point(388, 110);
+            this.surnameField.Location = new System.Drawing.Point(388, 185);
             this.surnameField.Name = "surnameField";
             this.surnameField.Size = new System.Drawing.Size(173, 20);
             this.surnameField.TabIndex = 4;
@@ -96,7 +97,7 @@
             // 
             // midNameField
             // 
-            this.midNameField.Location = new System.Drawing.Point(388, 161);
+            this.midNameField.Location = new System.Drawing.Point(388, 110);
             this.midNameField.Name = "midNameField";
             this.midNameField.Size = new System.Drawing.Size(173, 20);
             this.midNameField.TabIndex = 4;
@@ -111,12 +112,12 @@
             this.IINLabel.Text = "ИИН";
             this.IINLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox3
+            // IINField
             // 
-            this.textBox3.Location = new System.Drawing.Point(388, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(173, 20);
-            this.textBox3.TabIndex = 4;
+            this.IINField.Location = new System.Drawing.Point(388, 134);
+            this.IINField.Name = "IINField";
+            this.IINField.Size = new System.Drawing.Size(173, 20);
+            this.IINField.TabIndex = 4;
             // 
             // labelPanel
             // 
@@ -135,12 +136,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelPanel);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.IINField);
             this.Controls.Add(this.midNameField);
             this.Controls.Add(this.surnameField);
             this.Controls.Add(this.nameField);
             this.Controls.Add(this.createNewEmployee);
             this.Name = "AddEmployeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEmployeeForm";
             this.labelPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -158,7 +160,7 @@
         private System.Windows.Forms.Label midNameLabel;
         private System.Windows.Forms.TextBox midNameField;
         private System.Windows.Forms.Label IINLabel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox IINField;
         private System.Windows.Forms.Panel labelPanel;
     }
 }

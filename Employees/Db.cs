@@ -1,5 +1,6 @@
 ﻿using Employees.Entities;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 
 namespace Employees
@@ -32,7 +33,7 @@ namespace Employees
         {
             List<Company> companies = new List<Company>();
 
-            string query = "SELECT Name, INN, Address, Note FROM companies";
+            string query = "SELECT Id, Name, INN, Address, Note FROM companies";
 
             using (MySqlCommand command = new MySqlCommand(query, GetConnection()))
             {
@@ -41,6 +42,7 @@ namespace Employees
                     while (reader.Read())
                     {
                         Company company = new Company();
+                        company.Id = Convert.ToInt32(reader["Id"]);
                         company.Name = reader["Name"].ToString();
                         company.INN = reader["INN"].ToString();
                         company.Address = reader["Address"].ToString();
@@ -54,5 +56,33 @@ namespace Employees
             return companies;
         }
 
+        public void AddEmployee(Employee newEmployee, int companyId = 0)
+        {
+            string queryEmployee = "INSERT INTO employees (FirstName, LastName, MiddleName, IIN) " +
+                                   "VALUES (@FirstName, @LastName, @MiddleName, @IIN)";
+            int employeeId = 0;
+
+            using (MySqlCommand command = new MySqlCommand(queryEmployee, GetConnection()))
+            {
+                command.Parameters.AddWithValue("@FirstName", newEmployee.FirstName);
+                command.Parameters.AddWithValue("@LastName", newEmployee.LastName);
+                command.Parameters.AddWithValue("@MiddleName", newEmployee.MiddleName);
+                command.Parameters.AddWithValue("@IIN", newEmployee.IIN);
+
+                command.ExecuteNonQuery();
+                employeeId = 0;
+            }
+
+            if (companyId != 0)
+            {
+                string queryCompanyEmployees = "INSERT INTO companyemployees (CompanyId, EmployeeId) " +
+                                               "VALUES (@companyId, @employeeId)";
+                using (MySqlCommand command = new MySqlCommand(queryCompanyEmployees, GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@companyId", companyId);
+                    command.Parameters.AddWithValue("@employeeId", employeeId);
+                }
+            }
+        }
     }
 }

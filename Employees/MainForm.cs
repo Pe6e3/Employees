@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Employees.Entities;
+using System;
 using System.Windows.Forms;
 
 namespace Employees
@@ -21,12 +22,16 @@ namespace Employees
         {
             listBoxCompanies.Items.Clear();
 
+            // Указываем, какое свойство использовать для отображения имени компании
+            listBoxCompanies.DisplayMember = "Name";
+
             var companies = db.GetCompanyNames();
-            foreach (var companyName in companies)
-            {
-                listBoxCompanies.Items.Add(companyName.Name);
-            }
+            foreach (var company in companies)
+                //listBoxCompanies.Items.Add(company.Name);
+                listBoxCompanies.Items.Add(company);
+
         }
+
 
         private void addEmployee_Click(object sender, EventArgs e)
         {
@@ -37,18 +42,16 @@ namespace Employees
                 return;
             }
 
-            // Получаем выбранное название компании
-            string selectedCompanyName = listBoxCompanies.SelectedItem.ToString();
+            // Получаем выбранный объект Company
+            Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
 
-            // Создаем форму для добавления сотрудника и передаем ей название компании
-            using (AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompanyName))
-            {
-                DialogResult result = addEmployeeForm.ShowDialog();
+            // Получаем Id выбранной компании
+            int selectedCompanyId = selectedCompany.Id;
 
-                // Если сотрудник успешно добавлен, обновляем список компаний
-                if (result == DialogResult.OK)
-                    RefreshCompanyList();
-            }
+            // Создаем форму для добавления сотрудника и передаем ей Id компании
+            AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompanyId);
+            addEmployeeForm.Show();
+
         }
 
     }

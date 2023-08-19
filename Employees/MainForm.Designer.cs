@@ -31,12 +31,14 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.listBoxCompanies = new System.Windows.Forms.ListBox();
             this.addEmployee = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
+            this.MainPanel.Controls.Add(this.label1);
             this.MainPanel.Controls.Add(this.addEmployee);
             this.MainPanel.Controls.Add(this.listBoxCompanies);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,13 +58,23 @@
             // 
             // addEmployee
             // 
-            this.addEmployee.Location = new System.Drawing.Point(109, 374);
+            this.addEmployee.Location = new System.Drawing.Point(121, 362);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(146, 23);
             this.addEmployee.TabIndex = 1;
             this.addEmployee.Text = "Добавить сотрудника";
             this.addEmployee.UseVisualStyleBackColor = true;
             this.addEmployee.Click += new System.EventHandler(this.addEmployee_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(129, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Все компании";
             // 
             // MainForm
             // 
@@ -75,6 +87,7 @@
             this.Text = "Сотрудники компаний";
             this.TopMost = true;
             this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,6 +98,7 @@
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.ListBox listBoxCompanies;
         private System.Windows.Forms.Button addEmployee;
+        private System.Windows.Forms.Label label1;
     }
 }
 
