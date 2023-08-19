@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Employees.Entities;
 
@@ -18,11 +19,35 @@ namespace Employees
         {
             InitializeComponent();
             _companyId = companyId;
+
+            // Заполнение выпадающего списка компаниями
+            FillCompanyComboBox();
+
+            // Выбор компании по умолчанию
+            if (_companyId != 0)
+            {
+                comboBoxCompany.SelectedValue = _companyId;
+            }
+
             MessageBox.Show($"Id компании: {companyId}");
+        }
+
+        private void FillCompanyComboBox()
+        {
+            // Получаем список всех компаний
+            List<Company> companies = _db.GetCompanyNames();
+
+            // Привязываем список компаний к ComboBox
+            comboBoxCompany.DataSource = companies;
+            comboBoxCompany.DisplayMember = "Name";
+            comboBoxCompany.ValueMember = "Id";
         }
 
         private void createNewEmployee_Click(object sender, EventArgs e)
         {
+            // Получаем выбранную компанию из ComboBox
+            int selectedCompanyId = Convert.ToInt32(comboBoxCompany.SelectedValue);
+
             // Создаем нового сотрудника с данными из формы
             Employee newEmployee = new Employee
             {
@@ -32,16 +57,13 @@ namespace Employees
                 IIN = IINField.Text
             };
 
-            if (_companyId != 0)
-                _db.AddEmployee(newEmployee, _companyId);
-            else
-                _db.AddEmployee(newEmployee);
-
+            // Добавляем сотрудника с указанием компании
+            _db.AddEmployee(newEmployee, selectedCompanyId);
 
             MessageBox.Show("Сотрудник успешно добавлен.");
 
-            // Закрываем текущую форму
             Close();
         }
+
     }
 }

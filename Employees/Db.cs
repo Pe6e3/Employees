@@ -68,9 +68,10 @@ namespace Employees
                 command.Parameters.AddWithValue("@LastName", newEmployee.LastName);
                 command.Parameters.AddWithValue("@MiddleName", newEmployee.MiddleName);
                 command.Parameters.AddWithValue("@IIN", newEmployee.IIN);
-
                 command.ExecuteNonQuery();
-                employeeId = 0;
+
+                employeeId = (int)command.LastInsertedId;// Получаем Id только что созданного сотрудника
+                CloseConnection();
             }
 
             if (companyId != 0)
@@ -81,6 +82,9 @@ namespace Employees
                 {
                     command.Parameters.AddWithValue("@companyId", companyId);
                     command.Parameters.AddWithValue("@employeeId", employeeId);
+                    command.ExecuteNonQuery();
+
+                    CloseConnection();
                 }
             }
         }

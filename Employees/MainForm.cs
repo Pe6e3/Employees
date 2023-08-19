@@ -27,7 +27,6 @@ namespace Employees
 
             var companies = db.GetCompanyNames();
             foreach (var company in companies)
-                //listBoxCompanies.Items.Add(company.Name);
                 listBoxCompanies.Items.Add(company);
 
         }
@@ -50,6 +49,7 @@ namespace Employees
 
             // Создаем форму для добавления сотрудника и передаем ей Id компании
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompanyId);
+            this.Hide();
             addEmployeeForm.Show();
 
         }
