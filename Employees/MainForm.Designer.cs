@@ -30,12 +30,14 @@
         {
             this.MainPanel = new System.Windows.Forms.Panel();
             this.listBoxCompanies = new System.Windows.Forms.ListBox();
+            this.addEmployee = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
+            this.MainPanel.Controls.Add(this.addEmployee);
             this.MainPanel.Controls.Add(this.listBoxCompanies);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
@@ -51,6 +53,16 @@
             this.listBoxCompanies.Name = "listBoxCompanies";
             this.listBoxCompanies.Size = new System.Drawing.Size(247, 290);
             this.listBoxCompanies.TabIndex = 0;
+            // 
+            // addEmployee
+            // 
+            this.addEmployee.Location = new System.Drawing.Point(109, 374);
+            this.addEmployee.Name = "addEmployee";
+            this.addEmployee.Size = new System.Drawing.Size(146, 23);
+            this.addEmployee.TabIndex = 1;
+            this.addEmployee.Text = "Добавить сотрудника";
+            this.addEmployee.UseVisualStyleBackColor = true;
+            this.addEmployee.Click += new System.EventHandler(this.addEmployee_Click);
             // 
             // MainForm
             // 
@@ -72,6 +84,7 @@
 
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.ListBox listBoxCompanies;
+        private System.Windows.Forms.Button addEmployee;
     }
 }
 
