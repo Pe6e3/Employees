@@ -82,7 +82,20 @@ namespace Employees
             RefreshEmployeeList(selectedCompany.Id);
             employeeLabel.Text = "";
             employeeCompanyLabel.Text = $"Сотрудники компании\n{selectedCompany.Name}";
+        }
 
+        private void listBoxEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Employee selectedEmployee = (Employee)listBoxEmployees.SelectedItem;
+            RefreshEmployeeCard(selectedEmployee);
+        }
+
+        private void RefreshEmployeeCard(Employee selectedEmployee)
+        {
+            firstnameLabel.Text = selectedEmployee.FirstName;
+            lastnameLabel.Text = selectedEmployee.LastName;
+            midnameLabel.Text = selectedEmployee.MiddleName;
+            iinLabel.Text = selectedEmployee.IIN;
         }
     }
 }
