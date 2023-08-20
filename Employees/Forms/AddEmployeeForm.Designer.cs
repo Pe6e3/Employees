@@ -41,13 +41,15 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.companyLabel = new System.Windows.Forms.Label();
             this.backToMainForm = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // newEmployeeButton
             // 
             this.newEmployeeButton.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.newEmployeeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newEmployeeButton.Location = new System.Drawing.Point(150, 223);
+            this.newEmployeeButton.Location = new System.Drawing.Point(164, 245);
             this.newEmployeeButton.Name = "newEmployeeButton";
             this.newEmployeeButton.Size = new System.Drawing.Size(134, 33);
             this.newEmployeeButton.TabIndex = 6;
@@ -57,7 +59,7 @@
             // 
             // nameLabel
             // 
-            this.nameLabel.Location = new System.Drawing.Point(43, 100);
+            this.nameLabel.Location = new System.Drawing.Point(57, 122);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(112, 25);
             this.nameLabel.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             // nameField
             // 
-            this.nameField.Location = new System.Drawing.Point(161, 100);
+            this.nameField.Location = new System.Drawing.Point(175, 122);
             this.nameField.Multiline = true;
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(173, 25);
@@ -75,7 +77,7 @@
             // 
             // surnameField
             // 
-            this.surnameField.Location = new System.Drawing.Point(161, 69);
+            this.surnameField.Location = new System.Drawing.Point(175, 91);
             this.surnameField.Multiline = true;
             this.surnameField.Name = "surnameField";
             this.surnameField.Size = new System.Drawing.Size(173, 25);
@@ -84,7 +86,7 @@
             // 
             // midNameField
             // 
-            this.midNameField.Location = new System.Drawing.Point(161, 134);
+            this.midNameField.Location = new System.Drawing.Point(175, 156);
             this.midNameField.Multiline = true;
             this.midNameField.Name = "midNameField";
             this.midNameField.Size = new System.Drawing.Size(173, 25);
@@ -93,7 +95,7 @@
             // 
             // IINField
             // 
-            this.IINField.Location = new System.Drawing.Point(161, 165);
+            this.IINField.Location = new System.Drawing.Point(175, 187);
             this.IINField.Multiline = true;
             this.IINField.Name = "IINField";
             this.IINField.Size = new System.Drawing.Size(173, 25);
@@ -102,7 +104,7 @@
             // 
             // midNameLabel
             // 
-            this.midNameLabel.Location = new System.Drawing.Point(43, 134);
+            this.midNameLabel.Location = new System.Drawing.Point(57, 156);
             this.midNameLabel.Name = "midNameLabel";
             this.midNameLabel.Size = new System.Drawing.Size(112, 25);
             this.midNameLabel.TabIndex = 3;
@@ -111,7 +113,7 @@
             // 
             // IINLabel
             // 
-            this.IINLabel.Location = new System.Drawing.Point(43, 165);
+            this.IINLabel.Location = new System.Drawing.Point(57, 187);
             this.IINLabel.Name = "IINLabel";
             this.IINLabel.Size = new System.Drawing.Size(112, 25);
             this.IINLabel.TabIndex = 3;
@@ -120,7 +122,7 @@
             // 
             // surnameLabel
             // 
-            this.surnameLabel.Location = new System.Drawing.Point(43, 69);
+            this.surnameLabel.Location = new System.Drawing.Point(57, 91);
             this.surnameLabel.Name = "surnameLabel";
             this.surnameLabel.Size = new System.Drawing.Size(112, 25);
             this.surnameLabel.TabIndex = 3;
@@ -130,7 +132,7 @@
             // comboBoxCompany
             // 
             this.comboBoxCompany.FormattingEnabled = true;
-            this.comboBoxCompany.Location = new System.Drawing.Point(161, 22);
+            this.comboBoxCompany.Location = new System.Drawing.Point(175, 44);
             this.comboBoxCompany.Name = "comboBoxCompany";
             this.comboBoxCompany.Size = new System.Drawing.Size(173, 21);
             this.comboBoxCompany.TabIndex = 6;
@@ -138,7 +140,7 @@
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(416, 2);
+            this.exitButton.Location = new System.Drawing.Point(406, 14);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(27, 23);
             this.exitButton.TabIndex = 7;
@@ -150,7 +152,7 @@
             // 
             // companyLabel
             // 
-            this.companyLabel.Location = new System.Drawing.Point(43, 19);
+            this.companyLabel.Location = new System.Drawing.Point(57, 41);
             this.companyLabel.Name = "companyLabel";
             this.companyLabel.Size = new System.Drawing.Size(112, 25);
             this.companyLabel.TabIndex = 3;
@@ -160,7 +162,7 @@
             // backToMainForm
             // 
             this.backToMainForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backToMainForm.Location = new System.Drawing.Point(10, 2);
+            this.backToMainForm.Location = new System.Drawing.Point(10, 14);
             this.backToMainForm.Name = "backToMainForm";
             this.backToMainForm.Size = new System.Drawing.Size(27, 23);
             this.backToMainForm.TabIndex = 7;
@@ -170,6 +172,26 @@
             this.backToMainForm.UseVisualStyleBackColor = true;
             this.backToMainForm.Click += new System.EventHandler(this.backToMainForm_Click);
             // 
+            // MainPanel
+            // 
+            this.MainPanel.Controls.Add(this.backToMainForm);
+            this.MainPanel.Controls.Add(this.exitButton);
+            this.MainPanel.Controls.Add(this.comboBoxCompany);
+            this.MainPanel.Controls.Add(this.companyLabel);
+            this.MainPanel.Controls.Add(this.surnameLabel);
+            this.MainPanel.Controls.Add(this.IINLabel);
+            this.MainPanel.Controls.Add(this.midNameLabel);
+            this.MainPanel.Controls.Add(this.nameLabel);
+            this.MainPanel.Controls.Add(this.IINField);
+            this.MainPanel.Controls.Add(this.midNameField);
+            this.MainPanel.Controls.Add(this.surnameField);
+            this.MainPanel.Controls.Add(this.nameField);
+            this.MainPanel.Controls.Add(this.newEmployeeButton);
+            this.MainPanel.Location = new System.Drawing.Point(0, -2);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(446, 299);
+            this.MainPanel.TabIndex = 8;
+            // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,25 +199,14 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(445, 302);
-            this.Controls.Add(this.backToMainForm);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.comboBoxCompany);
-            this.Controls.Add(this.companyLabel);
-            this.Controls.Add(this.surnameLabel);
-            this.Controls.Add(this.IINLabel);
-            this.Controls.Add(this.midNameLabel);
-            this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.IINField);
-            this.Controls.Add(this.midNameField);
-            this.Controls.Add(this.surnameField);
-            this.Controls.Add(this.nameField);
-            this.Controls.Add(this.newEmployeeButton);
+            this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEmployeeForm";
+            this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -214,5 +225,6 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label companyLabel;
         private System.Windows.Forms.Button backToMainForm;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }

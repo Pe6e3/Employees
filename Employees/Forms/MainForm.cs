@@ -1,7 +1,9 @@
 ﻿using Employees.Entities;
 using Employees.Forms;
+using Employees.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -15,6 +17,7 @@ namespace Employees
         {
             InitializeComponent();
             Load += MainForm_Load;
+            FormHelper.MakeFormMovable(form: this, panel: MainPanel);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -123,8 +126,7 @@ namespace Employees
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            _db.CloseConnection();
-            Application.Exit();
+            FormHelper.ExitProgramm(_db);
         }
 
         private void exportCSV_Click(object sender, EventArgs e)
@@ -183,6 +185,7 @@ namespace Employees
                         MessageBox.Show("CSV файл не содержит данных о сотрудниках.");
                 }
             }
+            RefreshEmployeeList();
         }
 
         private List<Employee> ReadEmployeesFromCSV(string filePath)
@@ -218,6 +221,8 @@ namespace Employees
 
             return employees;
         }
+
+
 
     }
 }

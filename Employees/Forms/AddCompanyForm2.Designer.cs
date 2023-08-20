@@ -39,12 +39,14 @@
             this.innField = new System.Windows.Forms.TextBox();
             this.newCompanyButton = new System.Windows.Forms.Button();
             this.backToMainForm = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(430, 12);
+            this.exitButton.Location = new System.Drawing.Point(428, 10);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(27, 23);
             this.exitButton.TabIndex = 8;
@@ -56,7 +58,7 @@
             // 
             // nameLabel
             // 
-            this.nameLabel.Location = new System.Drawing.Point(14, 42);
+            this.nameLabel.Location = new System.Drawing.Point(12, 40);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(112, 25);
             this.nameLabel.TabIndex = 11;
@@ -65,7 +67,7 @@
             // 
             // noteLabel
             // 
-            this.noteLabel.Location = new System.Drawing.Point(14, 165);
+            this.noteLabel.Location = new System.Drawing.Point(12, 163);
             this.noteLabel.Name = "noteLabel";
             this.noteLabel.Size = new System.Drawing.Size(112, 25);
             this.noteLabel.TabIndex = 12;
@@ -74,7 +76,7 @@
             // 
             // addressLabel
             // 
-            this.addressLabel.Location = new System.Drawing.Point(14, 107);
+            this.addressLabel.Location = new System.Drawing.Point(12, 105);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(112, 25);
             this.addressLabel.TabIndex = 13;
@@ -83,7 +85,7 @@
             // 
             // innLabel
             // 
-            this.innLabel.Location = new System.Drawing.Point(14, 73);
+            this.innLabel.Location = new System.Drawing.Point(12, 71);
             this.innLabel.Name = "innLabel";
             this.innLabel.Size = new System.Drawing.Size(112, 25);
             this.innLabel.TabIndex = 9;
@@ -92,7 +94,7 @@
             // 
             // noteField
             // 
-            this.noteField.Location = new System.Drawing.Point(132, 165);
+            this.noteField.Location = new System.Drawing.Point(130, 163);
             this.noteField.Multiline = true;
             this.noteField.Name = "noteField";
             this.noteField.Size = new System.Drawing.Size(269, 103);
@@ -100,7 +102,7 @@
             // 
             // addressField
             // 
-            this.addressField.Location = new System.Drawing.Point(132, 107);
+            this.addressField.Location = new System.Drawing.Point(130, 105);
             this.addressField.Multiline = true;
             this.addressField.Name = "addressField";
             this.addressField.Size = new System.Drawing.Size(269, 52);
@@ -109,7 +111,7 @@
             // 
             // nameField
             // 
-            this.nameField.Location = new System.Drawing.Point(132, 42);
+            this.nameField.Location = new System.Drawing.Point(130, 40);
             this.nameField.Multiline = true;
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(269, 25);
@@ -118,7 +120,7 @@
             // 
             // innField
             // 
-            this.innField.Location = new System.Drawing.Point(132, 73);
+            this.innField.Location = new System.Drawing.Point(130, 71);
             this.innField.Multiline = true;
             this.innField.Name = "innField";
             this.innField.Size = new System.Drawing.Size(269, 25);
@@ -129,7 +131,7 @@
             // 
             this.newCompanyButton.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.newCompanyButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newCompanyButton.Location = new System.Drawing.Point(197, 274);
+            this.newCompanyButton.Location = new System.Drawing.Point(195, 272);
             this.newCompanyButton.Name = "newCompanyButton";
             this.newCompanyButton.Size = new System.Drawing.Size(134, 33);
             this.newCompanyButton.TabIndex = 17;
@@ -140,7 +142,7 @@
             // backToMainForm
             // 
             this.backToMainForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backToMainForm.Location = new System.Drawing.Point(12, 11);
+            this.backToMainForm.Location = new System.Drawing.Point(10, 9);
             this.backToMainForm.Name = "backToMainForm";
             this.backToMainForm.Size = new System.Drawing.Size(27, 23);
             this.backToMainForm.TabIndex = 18;
@@ -150,29 +152,38 @@
             this.backToMainForm.UseVisualStyleBackColor = true;
             this.backToMainForm.Click += new System.EventHandler(this.backToMainForm_Click);
             // 
+            // MainPanel
+            // 
+            this.MainPanel.Controls.Add(this.backToMainForm);
+            this.MainPanel.Controls.Add(this.nameLabel);
+            this.MainPanel.Controls.Add(this.noteLabel);
+            this.MainPanel.Controls.Add(this.addressLabel);
+            this.MainPanel.Controls.Add(this.innLabel);
+            this.MainPanel.Controls.Add(this.noteField);
+            this.MainPanel.Controls.Add(this.addressField);
+            this.MainPanel.Controls.Add(this.nameField);
+            this.MainPanel.Controls.Add(this.innField);
+            this.MainPanel.Controls.Add(this.newCompanyButton);
+            this.MainPanel.Controls.Add(this.exitButton);
+            this.MainPanel.Location = new System.Drawing.Point(2, 2);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(468, 328);
+            this.MainPanel.TabIndex = 19;
+            // 
             // AddCompanyForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(469, 330);
-            this.Controls.Add(this.backToMainForm);
-            this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.noteLabel);
-            this.Controls.Add(this.addressLabel);
-            this.Controls.Add(this.innLabel);
-            this.Controls.Add(this.noteField);
-            this.Controls.Add(this.addressField);
-            this.Controls.Add(this.nameField);
-            this.Controls.Add(this.innField);
-            this.Controls.Add(this.newCompanyButton);
-            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddCompanyForm2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCompanyForm2";
+            this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -189,5 +200,6 @@
         private System.Windows.Forms.TextBox innField;
         private System.Windows.Forms.Button newCompanyButton;
         private System.Windows.Forms.Button backToMainForm;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }

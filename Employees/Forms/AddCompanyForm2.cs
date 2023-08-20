@@ -11,12 +11,12 @@ namespace Employees.Forms
         public AddCompanyForm2()
         {
             InitializeComponent();
+            FormHelper.MakeFormMovable(form: this, panel: MainPanel);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            _db.CloseConnection();
-            Application.Exit();
+            FormHelper.ExitProgramm(_db);
         }
 
         private void newCompanyButton_Click(object sender, EventArgs e)
@@ -49,20 +49,17 @@ namespace Employees.Forms
 
         private void nameField_TextChanged(object sender, EventArgs e)
         {
-            if (nameField.Text.Length > 30)
-                MessageBox.Show("Длина поля не должна превышать 30 символов");
+            FormHelper.CheckTextFieldLength(nameField, 30);
         }
 
         private void innField_TextChanged(object sender, EventArgs e)
         {
-            if (innField.Text.Length > 12)
-                MessageBox.Show("Длина поля не должна превышать 12 символов");
+            FormHelper.CheckTextFieldLength(innField, 12);
         }
 
         private void addressField_TextChanged(object sender, EventArgs e)
         {
-           if (addressField.Text.Length > 100)
-                MessageBox.Show("Длина поля не должна превышать 100 символов");
+            FormHelper.CheckTextFieldLength(addressField, 100);
         }
 
         private void backToMainForm_Click(object sender, EventArgs e)

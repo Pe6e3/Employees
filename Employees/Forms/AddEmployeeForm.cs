@@ -11,14 +11,16 @@ namespace Employees
         private int _companyId;
         private readonly Db _db = new Db();
 
-        public AddEmployeeForm()
+        public AddEmployeeForm()               // Конструктор, если создаем сотрудника без привязки к Компании (пока не реализовывал такой вариант)
         {
             InitializeComponent();
+            FormHelper.MakeFormMovable(form: this, panel: MainPanel);
         }
 
-        public AddEmployeeForm(int companyId)
+        public AddEmployeeForm(int companyId)  // Конструктор, если создаем сотрудника сразу для конкретной Компании 
         {
             InitializeComponent();
+            FormHelper.MakeFormMovable(form: this, panel: MainPanel);
             _companyId = companyId;
 
             // Заполнение выпадающего списка компаниями
@@ -71,8 +73,7 @@ namespace Employees
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            _db.CloseConnection();
-            Application.Exit();
+            FormHelper.ExitProgramm(_db);
         }
 
         private void surnameField_TextChanged(object sender, EventArgs e)
