@@ -29,6 +29,22 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.companyInfoField = new System.Windows.Forms.TextBox();
+            this.iinLabel = new System.Windows.Forms.Label();
+            this.iinField = new System.Windows.Forms.Label();
+            this.midnameLabel = new System.Windows.Forms.Label();
+            this.companyAddressField = new System.Windows.Forms.Label();
+            this.midnameField = new System.Windows.Forms.Label();
+            this.lastnameLabel = new System.Windows.Forms.Label();
+            this.companyAddressLabel = new System.Windows.Forms.Label();
+            this.companyIinLabel = new System.Windows.Forms.Label();
+            this.companyNameLabel = new System.Windows.Forms.Label();
+            this.firstnameLabel = new System.Windows.Forms.Label();
+            this.companyIinField = new System.Windows.Forms.Label();
+            this.lastnameField = new System.Windows.Forms.Label();
+            this.companyNameField = new System.Windows.Forms.Label();
+            this.firstnameField = new System.Windows.Forms.Label();
+            this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.employeeCompanyLabel = new System.Windows.Forms.Label();
             this.employeeLabel = new System.Windows.Forms.Label();
             this.listBoxEmployees = new System.Windows.Forms.ListBox();
@@ -36,15 +52,6 @@
             this.companiesLabel = new System.Windows.Forms.Label();
             this.addEmployee = new System.Windows.Forms.Button();
             this.listBoxCompanies = new System.Windows.Forms.ListBox();
-            this.employeePhoto = new System.Windows.Forms.PictureBox();
-            this.firstnameLabel = new System.Windows.Forms.Label();
-            this.lastnameLabel = new System.Windows.Forms.Label();
-            this.midnameLabel = new System.Windows.Forms.Label();
-            this.iinLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
             this.SuspendLayout();
@@ -52,14 +59,21 @@
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
-            this.MainPanel.Controls.Add(this.label4);
+            this.MainPanel.Controls.Add(this.companyInfoField);
             this.MainPanel.Controls.Add(this.iinLabel);
-            this.MainPanel.Controls.Add(this.label3);
+            this.MainPanel.Controls.Add(this.iinField);
             this.MainPanel.Controls.Add(this.midnameLabel);
-            this.MainPanel.Controls.Add(this.label2);
-            this.MainPanel.Controls.Add(this.label1);
+            this.MainPanel.Controls.Add(this.companyAddressField);
+            this.MainPanel.Controls.Add(this.midnameField);
             this.MainPanel.Controls.Add(this.lastnameLabel);
+            this.MainPanel.Controls.Add(this.companyAddressLabel);
+            this.MainPanel.Controls.Add(this.companyIinLabel);
+            this.MainPanel.Controls.Add(this.companyNameLabel);
             this.MainPanel.Controls.Add(this.firstnameLabel);
+            this.MainPanel.Controls.Add(this.companyIinField);
+            this.MainPanel.Controls.Add(this.lastnameField);
+            this.MainPanel.Controls.Add(this.companyNameField);
+            this.MainPanel.Controls.Add(this.firstnameField);
             this.MainPanel.Controls.Add(this.employeePhoto);
             this.MainPanel.Controls.Add(this.employeeCompanyLabel);
             this.MainPanel.Controls.Add(this.employeeLabel);
@@ -75,12 +89,192 @@
             this.MainPanel.Size = new System.Drawing.Size(999, 450);
             this.MainPanel.TabIndex = 0;
             // 
+            // companyInfoField
+            // 
+            this.companyInfoField.BackColor = System.Drawing.Color.PapayaWhip;
+            this.companyInfoField.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyInfoField.Location = new System.Drawing.Point(82, 344);
+            this.companyInfoField.Multiline = true;
+            this.companyInfoField.Name = "companyInfoField";
+            this.companyInfoField.ReadOnly = true;
+            this.companyInfoField.Size = new System.Drawing.Size(294, 94);
+            this.companyInfoField.TabIndex = 8;
+            this.companyInfoField.Text = "Примечание";
+            // 
+            // iinLabel
+            // 
+            this.iinLabel.AutoSize = true;
+            this.iinLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iinLabel.Location = new System.Drawing.Point(734, 301);
+            this.iinLabel.Name = "iinLabel";
+            this.iinLabel.Size = new System.Drawing.Size(48, 22);
+            this.iinLabel.TabIndex = 7;
+            this.iinLabel.Text = "ИИН:";
+            // 
+            // iinField
+            // 
+            this.iinField.AutoSize = true;
+            this.iinField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.iinField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iinField.Location = new System.Drawing.Point(788, 297);
+            this.iinField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.iinField.Name = "iinField";
+            this.iinField.Padding = new System.Windows.Forms.Padding(3);
+            this.iinField.Size = new System.Drawing.Size(180, 30);
+            this.iinField.TabIndex = 7;
+            // 
+            // midnameLabel
+            // 
+            this.midnameLabel.AutoSize = true;
+            this.midnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.midnameLabel.Location = new System.Drawing.Point(698, 269);
+            this.midnameLabel.Name = "midnameLabel";
+            this.midnameLabel.Size = new System.Drawing.Size(84, 22);
+            this.midnameLabel.TabIndex = 7;
+            this.midnameLabel.Text = "Отчество:";
+            // 
+            // companyAddressField
+            // 
+            this.companyAddressField.AutoSize = true;
+            this.companyAddressField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.companyAddressField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyAddressField.Location = new System.Drawing.Point(196, 295);
+            this.companyAddressField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.companyAddressField.Name = "companyAddressField";
+            this.companyAddressField.Padding = new System.Windows.Forms.Padding(3);
+            this.companyAddressField.Size = new System.Drawing.Size(180, 30);
+            this.companyAddressField.TabIndex = 7;
+            // 
+            // midnameField
+            // 
+            this.midnameField.AutoSize = true;
+            this.midnameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.midnameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.midnameField.Location = new System.Drawing.Point(788, 265);
+            this.midnameField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.midnameField.Name = "midnameField";
+            this.midnameField.Padding = new System.Windows.Forms.Padding(3);
+            this.midnameField.Size = new System.Drawing.Size(180, 30);
+            this.midnameField.TabIndex = 7;
+            // 
+            // lastnameLabel
+            // 
+            this.lastnameLabel.AutoSize = true;
+            this.lastnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lastnameLabel.Location = new System.Drawing.Point(700, 238);
+            this.lastnameLabel.Name = "lastnameLabel";
+            this.lastnameLabel.Size = new System.Drawing.Size(82, 22);
+            this.lastnameLabel.TabIndex = 7;
+            this.lastnameLabel.Text = "Фамилия:";
+            // 
+            // companyAddressLabel
+            // 
+            this.companyAddressLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.companyAddressLabel.AutoSize = true;
+            this.companyAddressLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyAddressLabel.Location = new System.Drawing.Point(129, 298);
+            this.companyAddressLabel.Name = "companyAddressLabel";
+            this.companyAddressLabel.Size = new System.Drawing.Size(61, 22);
+            this.companyAddressLabel.TabIndex = 7;
+            this.companyAddressLabel.Text = "Адрес:";
+            // 
+            // companyIinLabel
+            // 
+            this.companyIinLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.companyIinLabel.AutoSize = true;
+            this.companyIinLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyIinLabel.Location = new System.Drawing.Point(143, 267);
+            this.companyIinLabel.Name = "companyIinLabel";
+            this.companyIinLabel.Size = new System.Drawing.Size(47, 22);
+            this.companyIinLabel.TabIndex = 7;
+            this.companyIinLabel.Text = "ИНН:";
+            // 
+            // companyNameLabel
+            // 
+            this.companyNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.companyNameLabel.AutoSize = true;
+            this.companyNameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyNameLabel.Location = new System.Drawing.Point(107, 234);
+            this.companyNameLabel.Name = "companyNameLabel";
+            this.companyNameLabel.Size = new System.Drawing.Size(83, 22);
+            this.companyNameLabel.TabIndex = 7;
+            this.companyNameLabel.Text = "Название:";
+            // 
+            // firstnameLabel
+            // 
+            this.firstnameLabel.AutoSize = true;
+            this.firstnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.firstnameLabel.Location = new System.Drawing.Point(736, 204);
+            this.firstnameLabel.Name = "firstnameLabel";
+            this.firstnameLabel.Size = new System.Drawing.Size(46, 22);
+            this.firstnameLabel.TabIndex = 7;
+            this.firstnameLabel.Text = "Имя:";
+            // 
+            // companyIinField
+            // 
+            this.companyIinField.AutoSize = true;
+            this.companyIinField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.companyIinField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyIinField.Location = new System.Drawing.Point(196, 264);
+            this.companyIinField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.companyIinField.Name = "companyIinField";
+            this.companyIinField.Padding = new System.Windows.Forms.Padding(3);
+            this.companyIinField.Size = new System.Drawing.Size(180, 30);
+            this.companyIinField.TabIndex = 7;
+            // 
+            // lastnameField
+            // 
+            this.lastnameField.AutoSize = true;
+            this.lastnameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lastnameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lastnameField.Location = new System.Drawing.Point(788, 234);
+            this.lastnameField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.lastnameField.Name = "lastnameField";
+            this.lastnameField.Padding = new System.Windows.Forms.Padding(3);
+            this.lastnameField.Size = new System.Drawing.Size(180, 30);
+            this.lastnameField.TabIndex = 7;
+            // 
+            // companyNameField
+            // 
+            this.companyNameField.AutoSize = true;
+            this.companyNameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.companyNameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyNameField.Location = new System.Drawing.Point(196, 230);
+            this.companyNameField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.companyNameField.Name = "companyNameField";
+            this.companyNameField.Padding = new System.Windows.Forms.Padding(3);
+            this.companyNameField.Size = new System.Drawing.Size(180, 30);
+            this.companyNameField.TabIndex = 7;
+            // 
+            // firstnameField
+            // 
+            this.firstnameField.AutoSize = true;
+            this.firstnameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.firstnameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.firstnameField.Location = new System.Drawing.Point(788, 200);
+            this.firstnameField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.firstnameField.Name = "firstnameField";
+            this.firstnameField.Padding = new System.Windows.Forms.Padding(3);
+            this.firstnameField.Size = new System.Drawing.Size(180, 30);
+            this.firstnameField.TabIndex = 7;
+            // 
+            // employeePhoto
+            // 
+            this.employeePhoto.Image = global::Employees.Properties.Resources.user;
+            this.employeePhoto.InitialImage = null;
+            this.employeePhoto.Location = new System.Drawing.Point(804, 66);
+            this.employeePhoto.Name = "employeePhoto";
+            this.employeePhoto.Size = new System.Drawing.Size(125, 119);
+            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.employeePhoto.TabIndex = 6;
+            this.employeePhoto.TabStop = false;
+            // 
             // employeeCompanyLabel
             // 
             this.employeeCompanyLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.employeeCompanyLabel.AutoSize = true;
             this.employeeCompanyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.employeeCompanyLabel.Location = new System.Drawing.Point(402, 23);
+            this.employeeCompanyLabel.Location = new System.Drawing.Point(452, 23);
             this.employeeCompanyLabel.Name = "employeeCompanyLabel";
             this.employeeCompanyLabel.Size = new System.Drawing.Size(196, 20);
             this.employeeCompanyLabel.TabIndex = 5;
@@ -92,7 +286,7 @@
             this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.employeeLabel.AutoSize = true;
             this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.employeeLabel.Location = new System.Drawing.Point(423, 43);
+            this.employeeLabel.Location = new System.Drawing.Point(473, 43);
             this.employeeLabel.Name = "employeeLabel";
             this.employeeLabel.Size = new System.Drawing.Size(143, 20);
             this.employeeLabel.TabIndex = 5;
@@ -102,9 +296,9 @@
             // listBoxEmployees
             // 
             this.listBoxEmployees.FormattingEnabled = true;
-            this.listBoxEmployees.Location = new System.Drawing.Point(365, 66);
+            this.listBoxEmployees.Location = new System.Drawing.Point(415, 66);
             this.listBoxEmployees.Name = "listBoxEmployees";
-            this.listBoxEmployees.Size = new System.Drawing.Size(266, 290);
+            this.listBoxEmployees.Size = new System.Drawing.Size(266, 277);
             this.listBoxEmployees.TabIndex = 4;
             this.listBoxEmployees.SelectedIndexChanged += new System.EventHandler(this.listBoxEmployees_SelectedIndexChanged);
             // 
@@ -125,7 +319,7 @@
             // 
             this.companiesLabel.AutoSize = true;
             this.companiesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companiesLabel.Location = new System.Drawing.Point(128, 43);
+            this.companiesLabel.Location = new System.Drawing.Point(153, 43);
             this.companiesLabel.Name = "companiesLabel";
             this.companiesLabel.Size = new System.Drawing.Size(126, 20);
             this.companiesLabel.TabIndex = 2;
@@ -134,7 +328,7 @@
             // addEmployee
             // 
             this.addEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee.Location = new System.Drawing.Point(427, 362);
+            this.addEmployee.Location = new System.Drawing.Point(477, 362);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(146, 23);
             this.addEmployee.TabIndex = 1;
@@ -145,114 +339,11 @@
             // listBoxCompanies
             // 
             this.listBoxCompanies.FormattingEnabled = true;
-            this.listBoxCompanies.Location = new System.Drawing.Point(72, 66);
+            this.listBoxCompanies.Location = new System.Drawing.Point(82, 66);
             this.listBoxCompanies.Name = "listBoxCompanies";
-            this.listBoxCompanies.Size = new System.Drawing.Size(247, 290);
+            this.listBoxCompanies.Size = new System.Drawing.Size(294, 147);
             this.listBoxCompanies.TabIndex = 0;
             this.listBoxCompanies.SelectedIndexChanged += new System.EventHandler(this.listBoxCompanies_SelectedIndexChanged);
-            // 
-            // employeePhoto
-            // 
-            this.employeePhoto.Image = global::Employees.Properties.Resources.user;
-            this.employeePhoto.InitialImage = null;
-            this.employeePhoto.Location = new System.Drawing.Point(787, 66);
-            this.employeePhoto.Name = "employeePhoto";
-            this.employeePhoto.Size = new System.Drawing.Size(125, 119);
-            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.employeePhoto.TabIndex = 6;
-            this.employeePhoto.TabStop = false;
-            // 
-            // firstnameLabel
-            // 
-            this.firstnameLabel.AutoSize = true;
-            this.firstnameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.firstnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.firstnameLabel.Location = new System.Drawing.Point(771, 200);
-            this.firstnameLabel.MinimumSize = new System.Drawing.Size(180, 0);
-            this.firstnameLabel.Name = "firstnameLabel";
-            this.firstnameLabel.Padding = new System.Windows.Forms.Padding(3);
-            this.firstnameLabel.Size = new System.Drawing.Size(180, 30);
-            this.firstnameLabel.TabIndex = 7;
-            this.firstnameLabel.Text = "Имя";
-            // 
-            // lastnameLabel
-            // 
-            this.lastnameLabel.AutoSize = true;
-            this.lastnameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lastnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lastnameLabel.Location = new System.Drawing.Point(771, 234);
-            this.lastnameLabel.MinimumSize = new System.Drawing.Size(180, 0);
-            this.lastnameLabel.Name = "lastnameLabel";
-            this.lastnameLabel.Padding = new System.Windows.Forms.Padding(3);
-            this.lastnameLabel.Size = new System.Drawing.Size(180, 30);
-            this.lastnameLabel.TabIndex = 7;
-            this.lastnameLabel.Text = "Фамилия";
-            // 
-            // midnameLabel
-            // 
-            this.midnameLabel.AutoSize = true;
-            this.midnameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.midnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.midnameLabel.Location = new System.Drawing.Point(771, 265);
-            this.midnameLabel.MinimumSize = new System.Drawing.Size(180, 0);
-            this.midnameLabel.Name = "midnameLabel";
-            this.midnameLabel.Padding = new System.Windows.Forms.Padding(3);
-            this.midnameLabel.Size = new System.Drawing.Size(180, 30);
-            this.midnameLabel.TabIndex = 7;
-            this.midnameLabel.Text = "Отчество";
-            // 
-            // iinLabel
-            // 
-            this.iinLabel.AutoSize = true;
-            this.iinLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.iinLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iinLabel.Location = new System.Drawing.Point(771, 297);
-            this.iinLabel.MinimumSize = new System.Drawing.Size(180, 0);
-            this.iinLabel.Name = "iinLabel";
-            this.iinLabel.Padding = new System.Windows.Forms.Padding(3);
-            this.iinLabel.Size = new System.Drawing.Size(180, 30);
-            this.iinLabel.TabIndex = 7;
-            this.iinLabel.Text = "ИИН";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(714, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Имя:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(678, 238);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 22);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Фамилия:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(674, 270);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 22);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Отчество:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(710, 301);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 22);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ИИН:";
             // 
             // MainForm
             // 
@@ -284,15 +375,22 @@
         private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.ListBox listBoxEmployees;
         private System.Windows.Forms.Label employeeCompanyLabel;
+        private System.Windows.Forms.Label iinField;
+        private System.Windows.Forms.Label midnameField;
+        private System.Windows.Forms.Label lastnameField;
+        private System.Windows.Forms.Label firstnameField;
+        private System.Windows.Forms.PictureBox employeePhoto;
         private System.Windows.Forms.Label iinLabel;
         private System.Windows.Forms.Label midnameLabel;
         private System.Windows.Forms.Label lastnameLabel;
         private System.Windows.Forms.Label firstnameLabel;
-        private System.Windows.Forms.PictureBox employeePhoto;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label companyAddressField;
+        private System.Windows.Forms.Label companyNameLabel;
+        private System.Windows.Forms.Label companyIinField;
+        private System.Windows.Forms.Label companyNameField;
+        private System.Windows.Forms.Label companyAddressLabel;
+        private System.Windows.Forms.Label companyIinLabel;
+        private System.Windows.Forms.TextBox companyInfoField;
     }
 }
 

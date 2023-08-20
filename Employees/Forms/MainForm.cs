@@ -92,10 +92,10 @@ namespace Employees
 
         private void RefreshEmployeeCard(Employee selectedEmployee)
         {
-            firstnameLabel.Text = selectedEmployee.FirstName;
-            lastnameLabel.Text = selectedEmployee.LastName;
-            midnameLabel.Text = selectedEmployee.MiddleName;
-            iinLabel.Text = selectedEmployee.IIN;
+            firstnameField.Text = selectedEmployee.FirstName;
+            lastnameField.Text = selectedEmployee.LastName;
+            midnameField.Text = selectedEmployee.MiddleName;
+            iinField.Text = selectedEmployee.IIN;
         }
     }
 }
