@@ -3,7 +3,7 @@ using Employees.Forms;
 using Employees.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.ComponentModel.Design;
 using System.IO;
 using System.Windows.Forms;
 
@@ -165,6 +165,9 @@ namespace Employees
 
         private void importCSV_Click(object sender, EventArgs e)
         {
+            Company company = (Company)listBoxCompanies.SelectedItem;
+            int companyId = company == null ? 0 : company.Id;  // если была выбрана компания, то передаем ее Id ниже. Если нет, передаем 0
+
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
@@ -174,18 +177,19 @@ namespace Employees
                 {
                     string csvFilePath = openFileDialog.FileName;
                     List<Employee> importedEmployees = ReadEmployeesFromCSV(csvFilePath);
+                    
 
                     if (importedEmployees.Count > 0)
                     {
                         foreach (var employee in importedEmployees)
-                            _db.AddEmployee(employee);
+                            _db.AddEmployee(employee, companyId);
                         MessageBox.Show($"Импортировано {importedEmployees.Count} сотрудников.");
                     }
                     else
                         MessageBox.Show("CSV файл не содержит данных о сотрудниках.");
                 }
             }
-            RefreshEmployeeList();
+            RefreshEmployeeList(companyId);
         }
 
         private List<Employee> ReadEmployeesFromCSV(string filePath)
