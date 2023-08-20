@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.companyInfoField = new System.Windows.Forms.TextBox();
+            this.companyNoteField = new System.Windows.Forms.TextBox();
             this.iinLabel = new System.Windows.Forms.Label();
             this.iinField = new System.Windows.Forms.Label();
             this.midnameLabel = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.companyIinLabel = new System.Windows.Forms.Label();
             this.companyNameLabel = new System.Windows.Forms.Label();
             this.firstnameLabel = new System.Windows.Forms.Label();
-            this.companyIinField = new System.Windows.Forms.Label();
+            this.companyInnField = new System.Windows.Forms.Label();
             this.lastnameField = new System.Windows.Forms.Label();
             this.companyNameField = new System.Windows.Forms.Label();
             this.firstnameField = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
-            this.MainPanel.Controls.Add(this.companyInfoField);
+            this.MainPanel.Controls.Add(this.companyNoteField);
             this.MainPanel.Controls.Add(this.iinLabel);
             this.MainPanel.Controls.Add(this.iinField);
             this.MainPanel.Controls.Add(this.midnameLabel);
@@ -70,7 +70,7 @@
             this.MainPanel.Controls.Add(this.companyIinLabel);
             this.MainPanel.Controls.Add(this.companyNameLabel);
             this.MainPanel.Controls.Add(this.firstnameLabel);
-            this.MainPanel.Controls.Add(this.companyIinField);
+            this.MainPanel.Controls.Add(this.companyInnField);
             this.MainPanel.Controls.Add(this.lastnameField);
             this.MainPanel.Controls.Add(this.companyNameField);
             this.MainPanel.Controls.Add(this.firstnameField);
@@ -89,17 +89,17 @@
             this.MainPanel.Size = new System.Drawing.Size(999, 450);
             this.MainPanel.TabIndex = 0;
             // 
-            // companyInfoField
+            // companyNoteField
             // 
-            this.companyInfoField.BackColor = System.Drawing.Color.PapayaWhip;
-            this.companyInfoField.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companyInfoField.Location = new System.Drawing.Point(82, 344);
-            this.companyInfoField.Multiline = true;
-            this.companyInfoField.Name = "companyInfoField";
-            this.companyInfoField.ReadOnly = true;
-            this.companyInfoField.Size = new System.Drawing.Size(294, 94);
-            this.companyInfoField.TabIndex = 8;
-            this.companyInfoField.Text = "Примечание";
+            this.companyNoteField.BackColor = System.Drawing.Color.PapayaWhip;
+            this.companyNoteField.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyNoteField.Location = new System.Drawing.Point(82, 344);
+            this.companyNoteField.Multiline = true;
+            this.companyNoteField.Name = "companyNoteField";
+            this.companyNoteField.ReadOnly = true;
+            this.companyNoteField.Size = new System.Drawing.Size(294, 94);
+            this.companyNoteField.TabIndex = 8;
+            this.companyNoteField.Text = "Примечание";
             // 
             // iinLabel
             // 
@@ -138,11 +138,12 @@
             this.companyAddressField.AutoSize = true;
             this.companyAddressField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.companyAddressField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companyAddressField.Location = new System.Drawing.Point(196, 295);
-            this.companyAddressField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.companyAddressField.Location = new System.Drawing.Point(156, 295);
+            this.companyAddressField.MaximumSize = new System.Drawing.Size(220, 0);
+            this.companyAddressField.MinimumSize = new System.Drawing.Size(220, 0);
             this.companyAddressField.Name = "companyAddressField";
             this.companyAddressField.Padding = new System.Windows.Forms.Padding(3);
-            this.companyAddressField.Size = new System.Drawing.Size(180, 30);
+            this.companyAddressField.Size = new System.Drawing.Size(220, 30);
             this.companyAddressField.TabIndex = 7;
             // 
             // midnameField
@@ -172,7 +173,7 @@
             this.companyAddressLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.companyAddressLabel.AutoSize = true;
             this.companyAddressLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companyAddressLabel.Location = new System.Drawing.Point(129, 298);
+            this.companyAddressLabel.Location = new System.Drawing.Point(89, 298);
             this.companyAddressLabel.Name = "companyAddressLabel";
             this.companyAddressLabel.Size = new System.Drawing.Size(61, 22);
             this.companyAddressLabel.TabIndex = 7;
@@ -183,7 +184,7 @@
             this.companyIinLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.companyIinLabel.AutoSize = true;
             this.companyIinLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companyIinLabel.Location = new System.Drawing.Point(143, 267);
+            this.companyIinLabel.Location = new System.Drawing.Point(103, 267);
             this.companyIinLabel.Name = "companyIinLabel";
             this.companyIinLabel.Size = new System.Drawing.Size(47, 22);
             this.companyIinLabel.TabIndex = 7;
@@ -194,7 +195,7 @@
             this.companyNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.companyNameLabel.AutoSize = true;
             this.companyNameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companyNameLabel.Location = new System.Drawing.Point(107, 234);
+            this.companyNameLabel.Location = new System.Drawing.Point(67, 234);
             this.companyNameLabel.Name = "companyNameLabel";
             this.companyNameLabel.Size = new System.Drawing.Size(83, 22);
             this.companyNameLabel.TabIndex = 7;
@@ -210,17 +211,18 @@
             this.firstnameLabel.TabIndex = 7;
             this.firstnameLabel.Text = "Имя:";
             // 
-            // companyIinField
+            // companyInnField
             // 
-            this.companyIinField.AutoSize = true;
-            this.companyIinField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.companyIinField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companyIinField.Location = new System.Drawing.Point(196, 264);
-            this.companyIinField.MinimumSize = new System.Drawing.Size(180, 0);
-            this.companyIinField.Name = "companyIinField";
-            this.companyIinField.Padding = new System.Windows.Forms.Padding(3);
-            this.companyIinField.Size = new System.Drawing.Size(180, 30);
-            this.companyIinField.TabIndex = 7;
+            this.companyInnField.AutoSize = true;
+            this.companyInnField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.companyInnField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companyInnField.Location = new System.Drawing.Point(156, 264);
+            this.companyInnField.MaximumSize = new System.Drawing.Size(220, 0);
+            this.companyInnField.MinimumSize = new System.Drawing.Size(220, 0);
+            this.companyInnField.Name = "companyInnField";
+            this.companyInnField.Padding = new System.Windows.Forms.Padding(3);
+            this.companyInnField.Size = new System.Drawing.Size(220, 30);
+            this.companyInnField.TabIndex = 7;
             // 
             // lastnameField
             // 
@@ -239,11 +241,12 @@
             this.companyNameField.AutoSize = true;
             this.companyNameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.companyNameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companyNameField.Location = new System.Drawing.Point(196, 230);
-            this.companyNameField.MinimumSize = new System.Drawing.Size(180, 0);
+            this.companyNameField.Location = new System.Drawing.Point(156, 230);
+            this.companyNameField.MaximumSize = new System.Drawing.Size(220, 0);
+            this.companyNameField.MinimumSize = new System.Drawing.Size(220, 0);
             this.companyNameField.Name = "companyNameField";
             this.companyNameField.Padding = new System.Windows.Forms.Padding(3);
-            this.companyNameField.Size = new System.Drawing.Size(180, 30);
+            this.companyNameField.Size = new System.Drawing.Size(220, 30);
             this.companyNameField.TabIndex = 7;
             // 
             // firstnameField
@@ -386,11 +389,11 @@
         private System.Windows.Forms.Label firstnameLabel;
         private System.Windows.Forms.Label companyAddressField;
         private System.Windows.Forms.Label companyNameLabel;
-        private System.Windows.Forms.Label companyIinField;
+        private System.Windows.Forms.Label companyInnField;
         private System.Windows.Forms.Label companyNameField;
         private System.Windows.Forms.Label companyAddressLabel;
         private System.Windows.Forms.Label companyIinLabel;
-        private System.Windows.Forms.TextBox companyInfoField;
+        private System.Windows.Forms.TextBox companyNoteField;
     }
 }
 

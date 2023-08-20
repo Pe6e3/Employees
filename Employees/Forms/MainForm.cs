@@ -51,21 +51,14 @@ namespace Employees
 
         private void addEmployee_Click(object sender, EventArgs e)
         {
-            // Проверяем, что какая-либо компания выбрана
-            if (listBoxCompanies.SelectedItem == null)
+            if (listBoxCompanies.SelectedItem == null)   // Проверяем, что какая-либо компания выбрана
             {
                 MessageBox.Show("Сначала выберите компанию");
                 return;
             }
 
-            // Получаем выбранный объект Company
             Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
-
-            // Получаем Id выбранной компании
-            int selectedCompanyId = selectedCompany.Id;
-
-            // Создаем форму для добавления сотрудника и передаем ей Id компании
-            AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompanyId);
+            AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompany.Id); // Создаем форму для добавления сотрудника и передаем ей Id компании
             this.Hide();
             addEmployeeForm.Show();
         }
@@ -80,6 +73,7 @@ namespace Employees
         {
             Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
             RefreshEmployeeList(selectedCompany.Id);
+            RefreshCompanyCard(selectedCompany);
             employeeLabel.Text = "";
             employeeCompanyLabel.Text = $"Сотрудники компании\n{selectedCompany.Name}";
         }
@@ -97,5 +91,14 @@ namespace Employees
             midnameField.Text = selectedEmployee.MiddleName;
             iinField.Text = selectedEmployee.IIN;
         }
+
+        private void RefreshCompanyCard(Company selectedCompany)
+        {
+            companyNameField.Text = selectedCompany.Name;
+            companyInnField.Text = selectedCompany.INN;
+            companyAddressField.Text = selectedCompany.Address;
+            companyNoteField.Text = selectedCompany.Note;
+        }
+
     }
 }
