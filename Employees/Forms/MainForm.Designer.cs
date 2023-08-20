@@ -57,6 +57,7 @@
             this.newCompanyButton = new System.Windows.Forms.Button();
             this.employeeLabelsPanel = new System.Windows.Forms.Panel();
             this.exportCSV = new System.Windows.Forms.Button();
+            this.importCSV = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.employeeCardPanel.SuspendLayout();
             this.employeePanel.SuspendLayout();
@@ -187,6 +188,7 @@
             // employeePanel
             // 
             this.employeePanel.BackColor = System.Drawing.Color.PeachPuff;
+            this.employeePanel.Controls.Add(this.importCSV);
             this.employeePanel.Controls.Add(this.exportCSV);
             this.employeePanel.Controls.Add(this.employeeLabelsPanel);
             this.employeePanel.Controls.Add(this.listBoxEmployees);
@@ -213,7 +215,7 @@
             this.listBoxEmployees.FormattingEnabled = true;
             this.listBoxEmployees.Location = new System.Drawing.Point(19, 55);
             this.listBoxEmployees.Name = "listBoxEmployees";
-            this.listBoxEmployees.Size = new System.Drawing.Size(266, 316);
+            this.listBoxEmployees.Size = new System.Drawing.Size(266, 277);
             this.listBoxEmployees.TabIndex = 4;
             this.listBoxEmployees.SelectedIndexChanged += new System.EventHandler(this.listBoxEmployees_SelectedIndexChanged);
             // 
@@ -221,9 +223,9 @@
             // 
             this.addEmployee.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.addEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee.Location = new System.Drawing.Point(19, 396);
+            this.addEmployee.Location = new System.Drawing.Point(19, 379);
             this.addEmployee.Name = "addEmployee";
-            this.addEmployee.Size = new System.Drawing.Size(146, 33);
+            this.addEmployee.Size = new System.Drawing.Size(83, 50);
             this.addEmployee.TabIndex = 1;
             this.addEmployee.Text = "Добавить сотрудника";
             this.addEmployee.UseVisualStyleBackColor = false;
@@ -398,13 +400,25 @@
             // 
             this.exportCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.exportCSV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exportCSV.Location = new System.Drawing.Point(190, 396);
+            this.exportCSV.Location = new System.Drawing.Point(202, 379);
             this.exportCSV.Name = "exportCSV";
-            this.exportCSV.Size = new System.Drawing.Size(95, 33);
+            this.exportCSV.Size = new System.Drawing.Size(83, 50);
             this.exportCSV.TabIndex = 7;
             this.exportCSV.Text = "экспорт в CSV";
             this.exportCSV.UseVisualStyleBackColor = false;
             this.exportCSV.Click += new System.EventHandler(this.exportCSV_Click);
+            // 
+            // importCSV
+            // 
+            this.importCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.importCSV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.importCSV.Location = new System.Drawing.Point(113, 379);
+            this.importCSV.Name = "importCSV";
+            this.importCSV.Size = new System.Drawing.Size(83, 50);
+            this.importCSV.TabIndex = 7;
+            this.importCSV.Text = "импорт из CSV";
+            this.importCSV.UseVisualStyleBackColor = false;
+            this.importCSV.Click += new System.EventHandler(this.importCSV_Click);
             // 
             // MainForm
             // 
@@ -462,6 +476,7 @@
         private System.Windows.Forms.Button newCompanyButton;
         private System.Windows.Forms.Panel employeeLabelsPanel;
         private System.Windows.Forms.Button exportCSV;
+        private System.Windows.Forms.Button importCSV;
     }
 }
 

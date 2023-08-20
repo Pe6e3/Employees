@@ -113,7 +113,8 @@
     </Compile>
     <Compile Include="Db.cs" />
     <Compile Include="Entities\Company.cs" />
-    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Forms\FormHelper.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

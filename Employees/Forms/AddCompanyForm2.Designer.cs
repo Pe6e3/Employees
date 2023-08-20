@@ -38,6 +38,7 @@
             this.nameField = new System.Windows.Forms.TextBox();
             this.innField = new System.Windows.Forms.TextBox();
             this.newCompanyButton = new System.Windows.Forms.Button();
+            this.backToMainForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exitButton
@@ -136,12 +137,26 @@
             this.newCompanyButton.UseVisualStyleBackColor = false;
             this.newCompanyButton.Click += new System.EventHandler(this.newCompanyButton_Click);
             // 
+            // backToMainForm
+            // 
+            this.backToMainForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.backToMainForm.Location = new System.Drawing.Point(12, 11);
+            this.backToMainForm.Name = "backToMainForm";
+            this.backToMainForm.Size = new System.Drawing.Size(27, 23);
+            this.backToMainForm.TabIndex = 18;
+            this.backToMainForm.Text = "←";
+            this.backToMainForm.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.backToMainForm.UseCompatibleTextRendering = true;
+            this.backToMainForm.UseVisualStyleBackColor = true;
+            this.backToMainForm.Click += new System.EventHandler(this.backToMainForm_Click);
+            // 
             // AddCompanyForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(469, 330);
+            this.Controls.Add(this.backToMainForm);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.noteLabel);
             this.Controls.Add(this.addressLabel);
@@ -173,5 +188,6 @@
         private System.Windows.Forms.TextBox nameField;
         private System.Windows.Forms.TextBox innField;
         private System.Windows.Forms.Button newCompanyButton;
+        private System.Windows.Forms.Button backToMainForm;
     }
 }

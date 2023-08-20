@@ -40,6 +40,7 @@
             this.comboBoxCompany = new System.Windows.Forms.ComboBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.companyLabel = new System.Windows.Forms.Label();
+            this.backToMainForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // newEmployeeButton
@@ -156,6 +157,19 @@
             this.companyLabel.Text = "Компания";
             this.companyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // backToMainForm
+            // 
+            this.backToMainForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.backToMainForm.Location = new System.Drawing.Point(10, 2);
+            this.backToMainForm.Name = "backToMainForm";
+            this.backToMainForm.Size = new System.Drawing.Size(27, 23);
+            this.backToMainForm.TabIndex = 7;
+            this.backToMainForm.Text = "←";
+            this.backToMainForm.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.backToMainForm.UseCompatibleTextRendering = true;
+            this.backToMainForm.UseVisualStyleBackColor = true;
+            this.backToMainForm.Click += new System.EventHandler(this.backToMainForm_Click);
+            // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +177,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(445, 302);
+            this.Controls.Add(this.backToMainForm);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.comboBoxCompany);
             this.Controls.Add(this.companyLabel);
@@ -198,5 +213,6 @@
         private System.Windows.Forms.ComboBox comboBoxCompany;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label companyLabel;
+        private System.Windows.Forms.Button backToMainForm;
     }
 }

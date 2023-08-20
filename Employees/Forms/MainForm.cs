@@ -2,6 +2,7 @@
 using Employees.Forms;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Employees
@@ -141,25 +142,82 @@ namespace Employees
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string csvContent = "Id,Fullname,FirstName,LastName,MiddleName,IIN\n";
-
+                    string csvContent = "Fullname,FirstName,LastName,MiddleName,IIN\n";
+                    int rowCounter = 0;
                     foreach (var item in listBoxEmployees.Items)
                     {
                         var employee = (Employee)item;
 
-                        string employeeCsvLine = $"{employee.Id},{employee.Fullname},{employee.FirstName},{employee.LastName},{employee.MiddleName},{employee.IIN}";
+                        string employeeCsvLine = $"{employee.Fullname},{employee.FirstName},{employee.LastName},{employee.MiddleName},{employee.IIN}";
                         csvContent += employeeCsvLine + "\n";
+                        rowCounter++;
                     }
 
                     string csvFilePath = saveFileDialog.FileName;
                     System.IO.File.WriteAllText(csvFilePath, csvContent);
 
-                    MessageBox.Show("Список сотрудников успешно экспортирован в CSV файл.");
+                    MessageBox.Show($"Список сотрудников успешно экспортирован в CSV файл\n ({rowCounter} строк).");
                 }
             }
         }
 
+        private void importCSV_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                openFileDialog.Title = "Выберите CSV файл для импорта";
 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string csvFilePath = openFileDialog.FileName;
+                    List<Employee> importedEmployees = ReadEmployeesFromCSV(csvFilePath);
+
+                    if (importedEmployees.Count > 0)
+                    {
+                        foreach (var employee in importedEmployees)
+                            _db.AddEmployee(employee);
+                        MessageBox.Show($"Импортировано {importedEmployees.Count} сотрудников.");
+                    }
+                    else
+                        MessageBox.Show("CSV файл не содержит данных о сотрудниках.");
+                }
+            }
+        }
+
+        private List<Employee> ReadEmployeesFromCSV(string filePath)
+        {
+            List<Employee> employees = new List<Employee>();
+
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string line = reader.ReadLine(); // Пропускаем заголовок
+                int countWrongLines = 0;
+                while (!reader.EndOfStream)
+                {
+                    line = reader.ReadLine();
+                    string[] values = line.Split(',');
+
+                    if (values.Length >= 5) // Проверяем наличие всех полей
+                    {
+                        Employee employee = new Employee
+                        {
+                            Fullname = values[0],
+                            FirstName = values[1],
+                            LastName = values[2],
+                            MiddleName = values[3],
+                            IIN = values[4]
+                        };
+                        employees.Add(employee);
+                    }
+                    else countWrongLines++;  // считаем сколько необработанных полей
+                }
+                if (countWrongLines > 0)
+                    MessageBox.Show($"Не было обработано {countWrongLines} строк (в них не хватает данных)");
+            }
+
+            return employees;
+        }
 
     }
 }

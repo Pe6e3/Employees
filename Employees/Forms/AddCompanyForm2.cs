@@ -1,4 +1,5 @@
 ﻿using Employees.Entities;
+using Employees.Helpers;
 using System;
 using System.Windows.Forms;
 
@@ -62,6 +63,11 @@ namespace Employees.Forms
         {
            if (addressField.Text.Length > 100)
                 MessageBox.Show("Длина поля не должна превышать 100 символов");
+        }
+
+        private void backToMainForm_Click(object sender, EventArgs e)
+        {
+            FormHelper.OpenMainForm(currentForm: this);
         }
     }
 }

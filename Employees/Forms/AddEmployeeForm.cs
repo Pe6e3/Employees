@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Employees.Entities;
+using Employees.Helpers;
 
 namespace Employees
 {
@@ -96,6 +97,11 @@ namespace Employees
         {
             if (IINField.Text.Length > 12)
                 MessageBox.Show("Длина поля не должна превышать 12 символов");
+        }
+
+        private void backToMainForm_Click(object sender, EventArgs e)
+        {
+            FormHelper.OpenMainForm(currentForm: this);
         }
     }
 }
