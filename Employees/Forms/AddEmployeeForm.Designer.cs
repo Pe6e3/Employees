@@ -135,7 +135,7 @@
             this.comboBoxCompany.Location = new System.Drawing.Point(175, 44);
             this.comboBoxCompany.Name = "comboBoxCompany";
             this.comboBoxCompany.Size = new System.Drawing.Size(173, 21);
-            this.comboBoxCompany.TabIndex = 6;
+            this.comboBoxCompany.TabIndex = 7;
             // 
             // exitButton
             // 

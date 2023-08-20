@@ -188,13 +188,14 @@ namespace Employees
         public void ClearCompanyEmployees(int companyId)
         {
             string queryDeleteByCompanyId = @"
-                            DELETE e
+                            DELETE e, ce .*
                             FROM `employees` e
                             JOIN `companyemployees` ce ON e.Id = ce.EmployeeId
-                            WHERE ce.CompanyId = @cId";
+                            WHERE ce.CompanyId = @cId;
+";
             if (companyId == 0)
                 queryDeleteByCompanyId = @"
-                            DELETE e
+                            DELETE e.*
                             FROM `employees` e
                             JOIN `companyemployees` ce ON e.Id = ce.EmployeeId";
 
@@ -207,7 +208,6 @@ namespace Employees
                 MessageBox.Show($"Сотрудники компании с Id = {companyId} удалены");
             else
                 MessageBox.Show($"Все сотрудники удалены");
-
         }
 
 

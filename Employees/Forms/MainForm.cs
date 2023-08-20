@@ -112,6 +112,8 @@ namespace Employees
             companyInnField.Text = "";
             companyAddressField.Text = "";
             companyNoteField.Text = "";
+            listBoxCompanies.SelectedIndex = -1;
+
         }
 
         private void newCompanyButton_Click(object sender, EventArgs e)
