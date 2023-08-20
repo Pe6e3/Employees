@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 
 namespace Employees
 {
@@ -155,6 +156,21 @@ namespace Employees
             }
 
             return employees;
+        }
+
+        internal void AddCompany(Company newCompany)
+        {
+            string queryCompany = "INSERT INTO companies (Name, INN, Address, Note) " +
+                                  "VALUES (@Name, @INN, @Address, @Note)";
+
+            using (MySqlCommand command = new MySqlCommand(queryCompany, GetConnection()))
+            {
+                command.Parameters.AddWithValue("@Name", newCompany.Name);
+                command.Parameters.AddWithValue("@INN", newCompany.INN);
+                command.Parameters.AddWithValue("@Address", newCompany.Address);
+                command.Parameters.AddWithValue("@Note", newCompany.Note);
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

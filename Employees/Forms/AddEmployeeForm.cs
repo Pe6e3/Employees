@@ -41,24 +41,18 @@ namespace Employees
 
         private void createNewEmployee_Click(object sender, EventArgs e)
         {
+            Employee newEmployee = new Employee();
             try
             {
-                // Получаем выбранную компанию из ComboBox
-                int selectedCompanyId = Convert.ToInt32(comboBoxCompany.SelectedValue);
+                int selectedCompanyId = Convert.ToInt32(comboBoxCompany.SelectedValue); // Получаем выбранную компанию из ComboBox
+                newEmployee.FirstName = nameField.Text;
+                newEmployee.LastName = surnameField.Text;
+                newEmployee.MiddleName = midNameField.Text;
+                newEmployee.IIN = IINField.Text;
+                newEmployee.Fullname = $"{newEmployee.LastName} {newEmployee.FirstName} {newEmployee.MiddleName}";
 
-                // Создаем нового сотрудника с данными из формы
-                Employee newEmployee = new Employee
-                {
-                    FirstName = nameField.Text,
-                    LastName = surnameField.Text,
-                    MiddleName = midNameField.Text,
-                    IIN = IINField.Text
-                };
-
-                // Добавляем сотрудника с указанием компании
-                _db.AddEmployee(newEmployee, selectedCompanyId);
-
-                MessageBox.Show("Сотрудник успешно добавлен.");
+                _db.AddEmployee(newEmployee, selectedCompanyId); // Добавляем сотрудника с указанием компании
+                MessageBox.Show($"Сотрудник {newEmployee.Fullname} успешно добавлен.");
             }
             catch (Exception ex)
             {
@@ -67,12 +61,10 @@ namespace Employees
             }
             finally
             {
-                // Закрываем соединение, даже если произошла ошибка
-                _db.CloseConnection();
+                _db.CloseConnection();  // Закрываем соединение, даже если произошла ошибка
                 this.Hide();
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
-
             }
         }
 

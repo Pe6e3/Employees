@@ -1,4 +1,5 @@
 ﻿using Employees.Entities;
+using Employees.Forms;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,7 +14,6 @@ namespace Employees
         {
             InitializeComponent();
             Load += MainForm_Load;
-            employeeCompanyLabel.Text = "";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -34,47 +34,37 @@ namespace Employees
 
         public void RefreshEmployeeList(int companyId = 0)
         {
-            listBoxEmployees.Items.Clear();
-            listBoxEmployees.DisplayMember = "Fullname";
-            List<Employee> employees = new List<Employee>();
-
-            if (companyId != 0)
-                employees = _db.GetEmployeesOfCompany(companyId);
-            else
-                employees = _db.GetAllEmployees();
-
-            foreach (var employee in employees)
-                listBoxEmployees.Items.Add(employee);
-        }
-
-
-        private void addEmployee_Click(object sender, EventArgs e)
-        {
-            if (listBoxCompanies.SelectedItem == null)   // Проверяем, что какая-либо компания выбрана
+            try
             {
-                MessageBox.Show("Сначала выберите компанию");
-                return;
+
+                listBoxEmployees.Items.Clear();
+                listBoxEmployees.DisplayMember = "Fullname";
+                List<Employee> employees = new List<Employee>();
+
+                if (companyId != 0)
+                    employees = _db.GetEmployeesOfCompany(companyId);
+                else
+                    employees = _db.GetAllEmployees();
+
+                foreach (var employee in employees)
+                    listBoxEmployees.Items.Add(employee);
             }
-
-            Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
-            AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompany.Id); // Создаем форму для добавления сотрудника и передаем ей Id компании
-            this.Hide();
-            addEmployeeForm.Show();
+            catch
+            {
+                MessageBox.Show("Ошибка при попытке обновить список сотрудников");
+            }
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            _db.CloseConnection();
-            Application.Exit();
-        }
+
+
 
         private void listBoxCompanies_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClearEmployeeCard();
             Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
+            if (selectedCompany == null) return;
             RefreshEmployeeList(selectedCompany.Id);
             RefreshCompanyCard(selectedCompany);
-            employeeLabel.Text = "";
             employeeCompanyLabel.Text = $"Сотрудники компании\n{selectedCompany.Name}";
         }
 
@@ -86,6 +76,7 @@ namespace Employees
 
         private void RefreshEmployeeCard(Employee selectedEmployee)
         {
+            if (selectedEmployee == null) return;
             firstnameField.Text = selectedEmployee.FirstName;
             lastnameField.Text = selectedEmployee.LastName;
             midnameField.Text = selectedEmployee.MiddleName;
@@ -108,5 +99,31 @@ namespace Employees
             iinField.Text = "";
         }
 
+        private void newCompanyButton_Click(object sender, EventArgs e)
+        {
+            AddCompanyForm2 addCompanyForm = new AddCompanyForm2();
+            this.Hide();
+            addCompanyForm.Show();
+        }
+
+        private void addEmployee_Click(object sender, EventArgs e)
+        {
+            if (listBoxCompanies.SelectedItem == null)   // Проверяем, что какая-либо компания выбрана
+            {
+                MessageBox.Show("Сначала выберите компанию");
+                return;
+            }
+
+            Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
+            AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompany.Id); // Создаем форму для добавления сотрудника и передаем ей Id компании
+            this.Hide();
+            addEmployeeForm.Show();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            _db.CloseConnection();
+            Application.Exit();
+        }
     }
 }
