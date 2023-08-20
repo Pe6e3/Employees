@@ -37,12 +37,18 @@
             this.firstnameField = new System.Windows.Forms.Label();
             this.midnameLabel = new System.Windows.Forms.Label();
             this.lastnameLabel = new System.Windows.Forms.Label();
+            this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.firstnameLabel = new System.Windows.Forms.Label();
             this.employeePanel = new System.Windows.Forms.Panel();
+            this.importCSV = new System.Windows.Forms.Button();
+            this.deleteEmployeees = new System.Windows.Forms.Button();
+            this.exportCSV = new System.Windows.Forms.Button();
+            this.employeeLabelsPanel = new System.Windows.Forms.Panel();
             this.employeeCompanyLabel = new System.Windows.Forms.Label();
             this.listBoxEmployees = new System.Windows.Forms.ListBox();
             this.addEmployee = new System.Windows.Forms.Button();
             this.companyPanel = new System.Windows.Forms.Panel();
+            this.newCompanyButton = new System.Windows.Forms.Button();
             this.companiesLabel = new System.Windows.Forms.Label();
             this.companyNoteField = new System.Windows.Forms.TextBox();
             this.listBoxCompanies = new System.Windows.Forms.ListBox();
@@ -53,17 +59,13 @@
             this.companyIinLabel = new System.Windows.Forms.Label();
             this.companyAddressLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.employeePhoto = new System.Windows.Forms.PictureBox();
-            this.newCompanyButton = new System.Windows.Forms.Button();
-            this.employeeLabelsPanel = new System.Windows.Forms.Panel();
-            this.exportCSV = new System.Windows.Forms.Button();
-            this.importCSV = new System.Windows.Forms.Button();
+            this.deleteEmployee = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.employeeCardPanel.SuspendLayout();
-            this.employeePanel.SuspendLayout();
-            this.companyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
+            this.employeePanel.SuspendLayout();
             this.employeeLabelsPanel.SuspendLayout();
+            this.companyPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -84,6 +86,7 @@
             // 
             this.employeeCardPanel.BackColor = System.Drawing.Color.PeachPuff;
             this.employeeCardPanel.Controls.Add(this.iinField);
+            this.employeeCardPanel.Controls.Add(this.deleteEmployee);
             this.employeeCardPanel.Controls.Add(this.midnameField);
             this.employeeCardPanel.Controls.Add(this.lastnameField);
             this.employeeCardPanel.Controls.Add(this.iinLabel);
@@ -102,7 +105,7 @@
             this.iinField.AutoSize = true;
             this.iinField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.iinField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iinField.Location = new System.Drawing.Point(96, 282);
+            this.iinField.Location = new System.Drawing.Point(98, 312);
             this.iinField.MinimumSize = new System.Drawing.Size(180, 0);
             this.iinField.Name = "iinField";
             this.iinField.Padding = new System.Windows.Forms.Padding(3);
@@ -114,7 +117,7 @@
             this.midnameField.AutoSize = true;
             this.midnameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.midnameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.midnameField.Location = new System.Drawing.Point(96, 244);
+            this.midnameField.Location = new System.Drawing.Point(98, 274);
             this.midnameField.MinimumSize = new System.Drawing.Size(180, 0);
             this.midnameField.Name = "midnameField";
             this.midnameField.Padding = new System.Windows.Forms.Padding(3);
@@ -126,7 +129,7 @@
             this.lastnameField.AutoSize = true;
             this.lastnameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lastnameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lastnameField.Location = new System.Drawing.Point(96, 164);
+            this.lastnameField.Location = new System.Drawing.Point(98, 194);
             this.lastnameField.MinimumSize = new System.Drawing.Size(180, 0);
             this.lastnameField.Name = "lastnameField";
             this.lastnameField.Padding = new System.Windows.Forms.Padding(3);
@@ -137,7 +140,7 @@
             // 
             this.iinLabel.AutoSize = true;
             this.iinLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iinLabel.Location = new System.Drawing.Point(42, 286);
+            this.iinLabel.Location = new System.Drawing.Point(44, 316);
             this.iinLabel.Name = "iinLabel";
             this.iinLabel.Size = new System.Drawing.Size(48, 22);
             this.iinLabel.TabIndex = 7;
@@ -148,7 +151,7 @@
             this.firstnameField.AutoSize = true;
             this.firstnameField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.firstnameField.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.firstnameField.Location = new System.Drawing.Point(96, 204);
+            this.firstnameField.Location = new System.Drawing.Point(98, 234);
             this.firstnameField.MinimumSize = new System.Drawing.Size(180, 0);
             this.firstnameField.Name = "firstnameField";
             this.firstnameField.Padding = new System.Windows.Forms.Padding(3);
@@ -159,7 +162,7 @@
             // 
             this.midnameLabel.AutoSize = true;
             this.midnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.midnameLabel.Location = new System.Drawing.Point(6, 247);
+            this.midnameLabel.Location = new System.Drawing.Point(8, 277);
             this.midnameLabel.Name = "midnameLabel";
             this.midnameLabel.Size = new System.Drawing.Size(84, 22);
             this.midnameLabel.TabIndex = 7;
@@ -169,17 +172,28 @@
             // 
             this.lastnameLabel.AutoSize = true;
             this.lastnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lastnameLabel.Location = new System.Drawing.Point(8, 165);
+            this.lastnameLabel.Location = new System.Drawing.Point(10, 195);
             this.lastnameLabel.Name = "lastnameLabel";
             this.lastnameLabel.Size = new System.Drawing.Size(82, 22);
             this.lastnameLabel.TabIndex = 7;
             this.lastnameLabel.Text = "Фамилия:";
             // 
+            // employeePhoto
+            // 
+            this.employeePhoto.Image = global::Employees.Properties.Resources.user;
+            this.employeePhoto.InitialImage = null;
+            this.employeePhoto.Location = new System.Drawing.Point(76, 30);
+            this.employeePhoto.Name = "employeePhoto";
+            this.employeePhoto.Size = new System.Drawing.Size(138, 144);
+            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.employeePhoto.TabIndex = 6;
+            this.employeePhoto.TabStop = false;
+            // 
             // firstnameLabel
             // 
             this.firstnameLabel.AutoSize = true;
             this.firstnameLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.firstnameLabel.Location = new System.Drawing.Point(44, 208);
+            this.firstnameLabel.Location = new System.Drawing.Point(46, 238);
             this.firstnameLabel.Name = "firstnameLabel";
             this.firstnameLabel.Size = new System.Drawing.Size(46, 22);
             this.firstnameLabel.TabIndex = 7;
@@ -189,6 +203,7 @@
             // 
             this.employeePanel.BackColor = System.Drawing.Color.PeachPuff;
             this.employeePanel.Controls.Add(this.importCSV);
+            this.employeePanel.Controls.Add(this.deleteEmployeees);
             this.employeePanel.Controls.Add(this.exportCSV);
             this.employeePanel.Controls.Add(this.employeeLabelsPanel);
             this.employeePanel.Controls.Add(this.listBoxEmployees);
@@ -197,6 +212,50 @@
             this.employeePanel.Name = "employeePanel";
             this.employeePanel.Size = new System.Drawing.Size(301, 436);
             this.employeePanel.TabIndex = 10;
+            // 
+            // importCSV
+            // 
+            this.importCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.importCSV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.importCSV.Location = new System.Drawing.Point(113, 345);
+            this.importCSV.Name = "importCSV";
+            this.importCSV.Size = new System.Drawing.Size(83, 50);
+            this.importCSV.TabIndex = 7;
+            this.importCSV.Text = "импорт из CSV";
+            this.importCSV.UseVisualStyleBackColor = false;
+            this.importCSV.Click += new System.EventHandler(this.importCSV_Click);
+            // 
+            // deleteEmployeees
+            // 
+            this.deleteEmployeees.BackColor = System.Drawing.Color.Coral;
+            this.deleteEmployeees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteEmployeees.Location = new System.Drawing.Point(19, 401);
+            this.deleteEmployeees.Name = "deleteEmployeees";
+            this.deleteEmployeees.Size = new System.Drawing.Size(266, 26);
+            this.deleteEmployeees.TabIndex = 7;
+            this.deleteEmployeees.Text = "удалить всех вышеуказанных сотрудников";
+            this.deleteEmployeees.UseVisualStyleBackColor = false;
+            this.deleteEmployeees.Click += new System.EventHandler(this.deleteEmployeees_Click);
+            // 
+            // exportCSV
+            // 
+            this.exportCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.exportCSV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exportCSV.Location = new System.Drawing.Point(202, 345);
+            this.exportCSV.Name = "exportCSV";
+            this.exportCSV.Size = new System.Drawing.Size(83, 50);
+            this.exportCSV.TabIndex = 7;
+            this.exportCSV.Text = "экспорт в CSV";
+            this.exportCSV.UseVisualStyleBackColor = false;
+            this.exportCSV.Click += new System.EventHandler(this.exportCSV_Click);
+            // 
+            // employeeLabelsPanel
+            // 
+            this.employeeLabelsPanel.Controls.Add(this.employeeCompanyLabel);
+            this.employeeLabelsPanel.Location = new System.Drawing.Point(1, 0);
+            this.employeeLabelsPanel.Name = "employeeLabelsPanel";
+            this.employeeLabelsPanel.Size = new System.Drawing.Size(300, 54);
+            this.employeeLabelsPanel.TabIndex = 6;
             // 
             // employeeCompanyLabel
             // 
@@ -223,7 +282,7 @@
             // 
             this.addEmployee.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.addEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee.Location = new System.Drawing.Point(19, 379);
+            this.addEmployee.Location = new System.Drawing.Point(19, 345);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(83, 50);
             this.addEmployee.TabIndex = 1;
@@ -248,6 +307,18 @@
             this.companyPanel.Name = "companyPanel";
             this.companyPanel.Size = new System.Drawing.Size(348, 436);
             this.companyPanel.TabIndex = 9;
+            // 
+            // newCompanyButton
+            // 
+            this.newCompanyButton.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.newCompanyButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newCompanyButton.Location = new System.Drawing.Point(99, 396);
+            this.newCompanyButton.Name = "newCompanyButton";
+            this.newCompanyButton.Size = new System.Drawing.Size(134, 33);
+            this.newCompanyButton.TabIndex = 18;
+            this.newCompanyButton.Text = "Добавить компанию";
+            this.newCompanyButton.UseVisualStyleBackColor = false;
+            this.newCompanyButton.Click += new System.EventHandler(this.newCompanyButton_Click);
             // 
             // companiesLabel
             // 
@@ -365,60 +436,17 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // employeePhoto
+            // deleteEmployee
             // 
-            this.employeePhoto.Image = global::Employees.Properties.Resources.user;
-            this.employeePhoto.InitialImage = null;
-            this.employeePhoto.Location = new System.Drawing.Point(87, 30);
-            this.employeePhoto.Name = "employeePhoto";
-            this.employeePhoto.Size = new System.Drawing.Size(125, 119);
-            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.employeePhoto.TabIndex = 6;
-            this.employeePhoto.TabStop = false;
-            // 
-            // newCompanyButton
-            // 
-            this.newCompanyButton.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.newCompanyButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newCompanyButton.Location = new System.Drawing.Point(99, 396);
-            this.newCompanyButton.Name = "newCompanyButton";
-            this.newCompanyButton.Size = new System.Drawing.Size(134, 33);
-            this.newCompanyButton.TabIndex = 18;
-            this.newCompanyButton.Text = "Добавить компанию";
-            this.newCompanyButton.UseVisualStyleBackColor = false;
-            this.newCompanyButton.Click += new System.EventHandler(this.newCompanyButton_Click);
-            // 
-            // employeeLabelsPanel
-            // 
-            this.employeeLabelsPanel.Controls.Add(this.employeeCompanyLabel);
-            this.employeeLabelsPanel.Location = new System.Drawing.Point(1, 0);
-            this.employeeLabelsPanel.Name = "employeeLabelsPanel";
-            this.employeeLabelsPanel.Size = new System.Drawing.Size(300, 54);
-            this.employeeLabelsPanel.TabIndex = 6;
-            // 
-            // exportCSV
-            // 
-            this.exportCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.exportCSV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exportCSV.Location = new System.Drawing.Point(202, 379);
-            this.exportCSV.Name = "exportCSV";
-            this.exportCSV.Size = new System.Drawing.Size(83, 50);
-            this.exportCSV.TabIndex = 7;
-            this.exportCSV.Text = "экспорт в CSV";
-            this.exportCSV.UseVisualStyleBackColor = false;
-            this.exportCSV.Click += new System.EventHandler(this.exportCSV_Click);
-            // 
-            // importCSV
-            // 
-            this.importCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.importCSV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.importCSV.Location = new System.Drawing.Point(113, 379);
-            this.importCSV.Name = "importCSV";
-            this.importCSV.Size = new System.Drawing.Size(83, 50);
-            this.importCSV.TabIndex = 7;
-            this.importCSV.Text = "импорт из CSV";
-            this.importCSV.UseVisualStyleBackColor = false;
-            this.importCSV.Click += new System.EventHandler(this.importCSV_Click);
+            this.deleteEmployee.BackColor = System.Drawing.Color.Coral;
+            this.deleteEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteEmployee.Location = new System.Drawing.Point(12, 401);
+            this.deleteEmployee.Name = "deleteEmployee";
+            this.deleteEmployee.Size = new System.Drawing.Size(266, 26);
+            this.deleteEmployee.TabIndex = 7;
+            this.deleteEmployee.Text = "удалить выбранного сотрудника";
+            this.deleteEmployee.UseVisualStyleBackColor = false;
+            this.deleteEmployee.Click += new System.EventHandler(this.deleteEmployee_Click);
             // 
             // MainForm
             // 
@@ -435,11 +463,11 @@
             this.MainPanel.ResumeLayout(false);
             this.employeeCardPanel.ResumeLayout(false);
             this.employeeCardPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
             this.employeePanel.ResumeLayout(false);
+            this.employeeLabelsPanel.ResumeLayout(false);
             this.companyPanel.ResumeLayout(false);
             this.companyPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
-            this.employeeLabelsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,6 +505,8 @@
         private System.Windows.Forms.Panel employeeLabelsPanel;
         private System.Windows.Forms.Button exportCSV;
         private System.Windows.Forms.Button importCSV;
+        private System.Windows.Forms.Button deleteEmployeees;
+        private System.Windows.Forms.Button deleteEmployee;
     }
 }
 

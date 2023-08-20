@@ -2,7 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
+using System.Windows.Forms;
 
 namespace Employees
 {
@@ -169,6 +169,45 @@ namespace Employees
                 command.Parameters.AddWithValue("@INN", newCompany.INN);
                 command.Parameters.AddWithValue("@Address", newCompany.Address);
                 command.Parameters.AddWithValue("@Note", newCompany.Note);
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        public void DeleteEmployee(int employeeId)
+        {
+            string queryDelete = "DELETE FROM `employees` WHERE `employees`.`Id` = @eId";
+            using (MySqlCommand command = new MySqlCommand(queryDelete, GetConnection()))
+            {
+                command.Parameters.AddWithValue("@eId", employeeId);
+                command.ExecuteNonQuery();
+            }
+            MessageBox.Show($"Сотрудник с Id = {employeeId} удален");
+        }
+
+        public void ClearCompanyEmployees(int companyId)
+        {
+            string query = @"
+                            DELETE e
+                            FROM `employees` e
+                            JOIN `companyemployees` ce ON e.Id = ce.EmployeeId
+                            WHERE ce.CompanyId = @cId";
+
+            using (MySqlCommand command = new MySqlCommand(query, GetConnection()))
+            {
+                command.Parameters.AddWithValue("@cId", companyId);
+                command.ExecuteNonQuery();
+            }
+            MessageBox.Show($"Сотрудники компании с Id = {companyId} удалены");
+        }
+
+
+        private void DeleteCompanyEmployee(int employeeId)
+        {
+            string queryDeleteCompanyEmployee = "DELETE FROM `companyemployees` WHERE `companyemployees`.`EmployeeId` = @eId";
+            using (MySqlCommand command = new MySqlCommand(queryDeleteCompanyEmployee, GetConnection()))
+            {
+                command.Parameters.AddWithValue("@eId", employeeId);
                 command.ExecuteNonQuery();
             }
         }

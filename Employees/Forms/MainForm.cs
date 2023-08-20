@@ -1,6 +1,7 @@
 ﻿using Employees.Entities;
 using Employees.Forms;
 using Employees.Helpers;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -12,6 +13,8 @@ namespace Employees
     public partial class MainForm : Form
     {
         private readonly Db _db = new Db();
+        private int _tempEmployeeId;
+        private int _tempCompanyId; // Эти две переменные нужны для того, чтобы обновлять информацию с учетом того, какая компания или сотрудник были выбраны до удаления/импорта/созания объектов
 
         public MainForm()
         {
@@ -40,7 +43,6 @@ namespace Employees
         {
             try
             {
-
                 listBoxEmployees.Items.Clear();
                 listBoxEmployees.DisplayMember = "Fullname";
                 List<Employee> employees = new List<Employee>();
@@ -52,6 +54,7 @@ namespace Employees
 
                 foreach (var employee in employees)
                     listBoxEmployees.Items.Add(employee);
+                _tempCompanyId = companyId;
             }
             catch
             {
@@ -85,6 +88,7 @@ namespace Employees
             lastnameField.Text = selectedEmployee.LastName;
             midnameField.Text = selectedEmployee.MiddleName;
             iinField.Text = selectedEmployee.IIN;
+            _tempEmployeeId= selectedEmployee.Id;
         }
 
         private void RefreshCompanyCard(Company selectedCompany)
@@ -167,7 +171,6 @@ namespace Employees
         {
             Company company = (Company)listBoxCompanies.SelectedItem;
             int companyId = company == null ? 0 : company.Id;  // если была выбрана компания, то передаем ее Id ниже. Если нет, передаем 0
-
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
@@ -226,7 +229,16 @@ namespace Employees
             return employees;
         }
 
+        private void deleteEmployeees_Click(object sender, EventArgs e)
+        {
+            _db.ClearCompanyEmployees(_tempCompanyId);
+            RefreshEmployeeList(_tempCompanyId);
+        }
 
-
+        private void deleteEmployee_Click(object sender, EventArgs e)
+        {
+            _db.DeleteEmployee(_tempEmployeeId);
+            RefreshEmployeeList(_tempCompanyId);
+        }
     }
 }
