@@ -88,7 +88,7 @@ namespace Employees
             lastnameField.Text = selectedEmployee.LastName;
             midnameField.Text = selectedEmployee.MiddleName;
             iinField.Text = selectedEmployee.IIN;
-            _tempEmployeeId= selectedEmployee.Id;
+            _tempEmployeeId = selectedEmployee.Id;
         }
 
         private void RefreshCompanyCard(Company selectedCompany)
@@ -105,6 +105,13 @@ namespace Employees
             lastnameField.Text = "";
             midnameField.Text = "";
             iinField.Text = "";
+        }
+        private void ClearCompanyCard()
+        {
+            companyNameField.Text = "";
+            companyInnField.Text = "";
+            companyAddressField.Text = "";
+            companyNoteField.Text = "";
         }
 
         private void newCompanyButton_Click(object sender, EventArgs e)
@@ -180,7 +187,7 @@ namespace Employees
                 {
                     string csvFilePath = openFileDialog.FileName;
                     List<Employee> importedEmployees = ReadEmployeesFromCSV(csvFilePath);
-                    
+
 
                     if (importedEmployees.Count > 0)
                     {
@@ -239,6 +246,13 @@ namespace Employees
         {
             _db.DeleteEmployee(_tempEmployeeId);
             RefreshEmployeeList(_tempCompanyId);
+        }
+
+        private void resetCompany_Click(object sender, EventArgs e)
+        {
+            RefreshEmployeeList();
+            ClearCompanyCard();
+            employeeCompanyLabel.Text = "Все Сотрудники";
         }
     }
 }

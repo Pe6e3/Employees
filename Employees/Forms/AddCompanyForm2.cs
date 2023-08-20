@@ -49,7 +49,7 @@ namespace Employees.Forms
 
         private void nameField_TextChanged(object sender, EventArgs e)
         {
-            FormHelper.CheckTextFieldLength(nameField, 30);
+            FormHelper.CheckTextFieldLength(nameField, 40);
         }
 
         private void innField_TextChanged(object sender, EventArgs e)

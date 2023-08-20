@@ -187,29 +187,30 @@ namespace Employees
 
         public void ClearCompanyEmployees(int companyId)
         {
-            string query = @"
+            string queryDeleteByCompanyId = @"
                             DELETE e
                             FROM `employees` e
                             JOIN `companyemployees` ce ON e.Id = ce.EmployeeId
                             WHERE ce.CompanyId = @cId";
+            if (companyId == 0)
+                queryDeleteByCompanyId = @"
+                            DELETE e
+                            FROM `employees` e
+                            JOIN `companyemployees` ce ON e.Id = ce.EmployeeId";
 
-            using (MySqlCommand command = new MySqlCommand(query, GetConnection()))
+            using (MySqlCommand command = new MySqlCommand(queryDeleteByCompanyId, GetConnection()))
             {
                 command.Parameters.AddWithValue("@cId", companyId);
                 command.ExecuteNonQuery();
             }
-            MessageBox.Show($"Сотрудники компании с Id = {companyId} удалены");
+            if (companyId != 0)
+                MessageBox.Show($"Сотрудники компании с Id = {companyId} удалены");
+            else
+                MessageBox.Show($"Все сотрудники удалены");
+
         }
 
 
-        private void DeleteCompanyEmployee(int employeeId)
-        {
-            string queryDeleteCompanyEmployee = "DELETE FROM `companyemployees` WHERE `companyemployees`.`EmployeeId` = @eId";
-            using (MySqlCommand command = new MySqlCommand(queryDeleteCompanyEmployee, GetConnection()))
-            {
-                command.Parameters.AddWithValue("@eId", employeeId);
-                command.ExecuteNonQuery();
-            }
-        }
+
     }
 }

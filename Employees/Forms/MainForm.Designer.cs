@@ -31,6 +31,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.employeeCardPanel = new System.Windows.Forms.Panel();
             this.iinField = new System.Windows.Forms.Label();
+            this.deleteEmployee = new System.Windows.Forms.Button();
             this.midnameField = new System.Windows.Forms.Label();
             this.lastnameField = new System.Windows.Forms.Label();
             this.iinLabel = new System.Windows.Forms.Label();
@@ -53,13 +54,13 @@
             this.companyNoteField = new System.Windows.Forms.TextBox();
             this.listBoxCompanies = new System.Windows.Forms.ListBox();
             this.companyNameField = new System.Windows.Forms.Label();
+            this.resetCompany = new System.Windows.Forms.Button();
             this.companyInnField = new System.Windows.Forms.Label();
             this.companyNameLabel = new System.Windows.Forms.Label();
             this.companyAddressField = new System.Windows.Forms.Label();
             this.companyIinLabel = new System.Windows.Forms.Label();
             this.companyAddressLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.deleteEmployee = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.employeeCardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
@@ -111,6 +112,18 @@
             this.iinField.Padding = new System.Windows.Forms.Padding(3);
             this.iinField.Size = new System.Drawing.Size(180, 30);
             this.iinField.TabIndex = 7;
+            // 
+            // deleteEmployee
+            // 
+            this.deleteEmployee.BackColor = System.Drawing.Color.Coral;
+            this.deleteEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteEmployee.Location = new System.Drawing.Point(12, 401);
+            this.deleteEmployee.Name = "deleteEmployee";
+            this.deleteEmployee.Size = new System.Drawing.Size(266, 26);
+            this.deleteEmployee.TabIndex = 7;
+            this.deleteEmployee.Text = "удалить выбранного сотрудника";
+            this.deleteEmployee.UseVisualStyleBackColor = false;
+            this.deleteEmployee.Click += new System.EventHandler(this.deleteEmployee_Click);
             // 
             // midnameField
             // 
@@ -298,6 +311,7 @@
             this.companyPanel.Controls.Add(this.companyNoteField);
             this.companyPanel.Controls.Add(this.listBoxCompanies);
             this.companyPanel.Controls.Add(this.companyNameField);
+            this.companyPanel.Controls.Add(this.resetCompany);
             this.companyPanel.Controls.Add(this.companyInnField);
             this.companyPanel.Controls.Add(this.companyNameLabel);
             this.companyPanel.Controls.Add(this.companyAddressField);
@@ -312,7 +326,7 @@
             // 
             this.newCompanyButton.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.newCompanyButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newCompanyButton.Location = new System.Drawing.Point(99, 396);
+            this.newCompanyButton.Location = new System.Drawing.Point(36, 394);
             this.newCompanyButton.Name = "newCompanyButton";
             this.newCompanyButton.Size = new System.Drawing.Size(134, 33);
             this.newCompanyButton.TabIndex = 18;
@@ -363,6 +377,18 @@
             this.companyNameField.Padding = new System.Windows.Forms.Padding(3);
             this.companyNameField.Size = new System.Drawing.Size(220, 30);
             this.companyNameField.TabIndex = 7;
+            // 
+            // resetCompany
+            // 
+            this.resetCompany.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.resetCompany.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetCompany.Location = new System.Drawing.Point(176, 394);
+            this.resetCompany.Name = "resetCompany";
+            this.resetCompany.Size = new System.Drawing.Size(154, 33);
+            this.resetCompany.TabIndex = 1;
+            this.resetCompany.Text = "Сбросить выбор компании";
+            this.resetCompany.UseVisualStyleBackColor = false;
+            this.resetCompany.Click += new System.EventHandler(this.resetCompany_Click);
             // 
             // companyInnField
             // 
@@ -436,18 +462,6 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // deleteEmployee
-            // 
-            this.deleteEmployee.BackColor = System.Drawing.Color.Coral;
-            this.deleteEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteEmployee.Location = new System.Drawing.Point(12, 401);
-            this.deleteEmployee.Name = "deleteEmployee";
-            this.deleteEmployee.Size = new System.Drawing.Size(266, 26);
-            this.deleteEmployee.TabIndex = 7;
-            this.deleteEmployee.Text = "удалить выбранного сотрудника";
-            this.deleteEmployee.UseVisualStyleBackColor = false;
-            this.deleteEmployee.Click += new System.EventHandler(this.deleteEmployee_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,6 +521,7 @@
         private System.Windows.Forms.Button importCSV;
         private System.Windows.Forms.Button deleteEmployeees;
         private System.Windows.Forms.Button deleteEmployee;
+        private System.Windows.Forms.Button resetCompany;
     }
 }
 

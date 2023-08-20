@@ -78,26 +78,23 @@ namespace Employees
 
         private void surnameField_TextChanged(object sender, EventArgs e)
         {
-            if (surnameField.Text.Length > 30)
-                MessageBox.Show("Длина поля не должна превышать 30 символов");
+            FormHelper.CheckTextFieldLength(surnameField, 30);
         }
 
         private void nameField_TextChanged(object sender, EventArgs e)
         {
-            if (nameField.Text.Length > 30)
-                MessageBox.Show("Длина поля не должна превышать 30 символов");
+            FormHelper.CheckTextFieldLength(nameField, 30);
+           
         }
 
         private void midNameField_TextChanged(object sender, EventArgs e)
         {
-            if (midNameField.Text.Length > 30)
-                MessageBox.Show("Длина поля не должна превышать 30 символов");
+            FormHelper.CheckTextFieldLength(midNameField, 30);
         }
 
         private void IINField_TextChanged(object sender, EventArgs e)
         {
-            if (IINField.Text.Length > 12)
-                MessageBox.Show("Длина поля не должна превышать 12 символов");
+            FormHelper.CheckTextFieldLength(IINField, 12);
         }
 
         private void backToMainForm_Click(object sender, EventArgs e)
