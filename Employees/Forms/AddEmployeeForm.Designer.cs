@@ -70,6 +70,7 @@
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(173, 25);
             this.nameField.TabIndex = 3;
+            this.nameField.TextChanged += new System.EventHandler(this.nameField_TextChanged);
             // 
             // surnameField
             // 
@@ -78,6 +79,7 @@
             this.surnameField.Name = "surnameField";
             this.surnameField.Size = new System.Drawing.Size(173, 25);
             this.surnameField.TabIndex = 2;
+            this.surnameField.TextChanged += new System.EventHandler(this.surnameField_TextChanged);
             // 
             // midNameField
             // 
@@ -86,6 +88,7 @@
             this.midNameField.Name = "midNameField";
             this.midNameField.Size = new System.Drawing.Size(173, 25);
             this.midNameField.TabIndex = 4;
+            this.midNameField.TextChanged += new System.EventHandler(this.midNameField_TextChanged);
             // 
             // IINField
             // 
@@ -94,6 +97,7 @@
             this.IINField.Name = "IINField";
             this.IINField.Size = new System.Drawing.Size(173, 25);
             this.IINField.TabIndex = 5;
+            this.IINField.TextChanged += new System.EventHandler(this.IINField_TextChanged);
             // 
             // midNameLabel
             // 

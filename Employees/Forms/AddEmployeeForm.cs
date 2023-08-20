@@ -73,5 +73,29 @@ namespace Employees
             _db.CloseConnection();
             Application.Exit();
         }
+
+        private void surnameField_TextChanged(object sender, EventArgs e)
+        {
+            if (surnameField.Text.Length > 30)
+                MessageBox.Show("Длина поля не должна превышать 30 символов");
+        }
+
+        private void nameField_TextChanged(object sender, EventArgs e)
+        {
+            if (nameField.Text.Length > 30)
+                MessageBox.Show("Длина поля не должна превышать 30 символов");
+        }
+
+        private void midNameField_TextChanged(object sender, EventArgs e)
+        {
+            if (midNameField.Text.Length > 30)
+                MessageBox.Show("Длина поля не должна превышать 30 символов");
+        }
+
+        private void IINField_TextChanged(object sender, EventArgs e)
+        {
+            if (IINField.Text.Length > 12)
+                MessageBox.Show("Длина поля не должна превышать 12 символов");
+        }
     }
 }
