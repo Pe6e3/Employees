@@ -13,6 +13,8 @@ namespace Employees
         {
             InitializeComponent();
             Load += MainForm_Load;
+            employeeCompanyLabel.Text = "";
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -44,7 +46,6 @@ namespace Employees
 
             foreach (var employee in employees)
                 listBoxEmployees.Items.Add(employee);
-
         }
 
 
@@ -79,6 +80,9 @@ namespace Employees
         {
             Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
             RefreshEmployeeList(selectedCompany.Id);
+            employeeLabel.Text = "";
+            employeeCompanyLabel.Text = $"Сотрудники компании\n{selectedCompany.Name}";
+
         }
     }
 }

@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.employeeCompanyLabel = new System.Windows.Forms.Label();
+            this.employeeLabel = new System.Windows.Forms.Label();
             this.listBoxEmployees = new System.Windows.Forms.ListBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.companiesLabel = new System.Windows.Forms.Label();
@@ -41,7 +42,8 @@
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
-            this.MainPanel.Controls.Add(this.label1);
+            this.MainPanel.Controls.Add(this.employeeCompanyLabel);
+            this.MainPanel.Controls.Add(this.employeeLabel);
             this.MainPanel.Controls.Add(this.listBoxEmployees);
             this.MainPanel.Controls.Add(this.exitButton);
             this.MainPanel.Controls.Add(this.companiesLabel);
@@ -54,22 +56,36 @@
             this.MainPanel.Size = new System.Drawing.Size(800, 450);
             this.MainPanel.TabIndex = 0;
             // 
-            // label1
+            // employeeCompanyLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(416, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Все сотрудники";
+            this.employeeCompanyLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.employeeCompanyLabel.AutoSize = true;
+            this.employeeCompanyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.employeeCompanyLabel.Location = new System.Drawing.Point(402, 23);
+            this.employeeCompanyLabel.Name = "employeeCompanyLabel";
+            this.employeeCompanyLabel.Size = new System.Drawing.Size(196, 20);
+            this.employeeCompanyLabel.TabIndex = 5;
+            this.employeeCompanyLabel.Text = "Сотрудники компании";
+            this.employeeCompanyLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // employeeLabel
+            // 
+            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.employeeLabel.AutoSize = true;
+            this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.employeeLabel.Location = new System.Drawing.Point(423, 43);
+            this.employeeLabel.Name = "employeeLabel";
+            this.employeeLabel.Size = new System.Drawing.Size(143, 20);
+            this.employeeLabel.TabIndex = 5;
+            this.employeeLabel.Text = "Все сотрудники";
+            this.employeeLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // listBoxEmployees
             // 
             this.listBoxEmployees.FormattingEnabled = true;
             this.listBoxEmployees.Location = new System.Drawing.Point(365, 66);
             this.listBoxEmployees.Name = "listBoxEmployees";
-            this.listBoxEmployees.Size = new System.Drawing.Size(234, 290);
+            this.listBoxEmployees.Size = new System.Drawing.Size(266, 290);
             this.listBoxEmployees.TabIndex = 4;
             // 
             // exitButton
@@ -89,7 +105,7 @@
             // 
             this.companiesLabel.AutoSize = true;
             this.companiesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.companiesLabel.Location = new System.Drawing.Point(129, 43);
+            this.companiesLabel.Location = new System.Drawing.Point(128, 43);
             this.companiesLabel.Name = "companiesLabel";
             this.companiesLabel.Size = new System.Drawing.Size(126, 20);
             this.companiesLabel.TabIndex = 2;
@@ -98,7 +114,7 @@
             // addEmployee
             // 
             this.addEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee.Location = new System.Drawing.Point(413, 362);
+            this.addEmployee.Location = new System.Drawing.Point(427, 362);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(146, 23);
             this.addEmployee.TabIndex = 1;
@@ -141,8 +157,9 @@
         private System.Windows.Forms.Button addEmployee;
         private System.Windows.Forms.Label companiesLabel;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.ListBox listBoxEmployees;
+        private System.Windows.Forms.Label employeeCompanyLabel;
     }
 }
 
