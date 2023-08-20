@@ -14,7 +14,6 @@ namespace Employees
             InitializeComponent();
             Load += MainForm_Load;
             employeeCompanyLabel.Text = "";
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -71,6 +70,7 @@ namespace Employees
 
         private void listBoxCompanies_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ClearEmployeeCard();
             Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
             RefreshEmployeeList(selectedCompany.Id);
             RefreshCompanyCard(selectedCompany);
@@ -98,6 +98,14 @@ namespace Employees
             companyInnField.Text = selectedCompany.INN;
             companyAddressField.Text = selectedCompany.Address;
             companyNoteField.Text = selectedCompany.Note;
+        }
+
+        private void ClearEmployeeCard()
+        {
+            firstnameField.Text = "";
+            lastnameField.Text = "";
+            midnameField.Text = "";
+            iinField.Text = "";
         }
 
     }
