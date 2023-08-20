@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBoxEmployees = new System.Windows.Forms.ListBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.companiesLabel = new System.Windows.Forms.Label();
             this.addEmployee = new System.Windows.Forms.Button();
             this.listBoxCompanies = new System.Windows.Forms.ListBox();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.listBoxEmployees = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,37 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(800, 450);
             this.MainPanel.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(416, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Все сотрудники";
+            // 
+            // listBoxEmployees
+            // 
+            this.listBoxEmployees.FormattingEnabled = true;
+            this.listBoxEmployees.Location = new System.Drawing.Point(365, 66);
+            this.listBoxEmployees.Name = "listBoxEmployees";
+            this.listBoxEmployees.Size = new System.Drawing.Size(234, 290);
+            this.listBoxEmployees.TabIndex = 4;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(770, 3);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(27, 23);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "X";
+            this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.exitButton.UseCompatibleTextRendering = true;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // companiesLabel
             // 
@@ -82,37 +113,7 @@
             this.listBoxCompanies.Name = "listBoxCompanies";
             this.listBoxCompanies.Size = new System.Drawing.Size(247, 290);
             this.listBoxCompanies.TabIndex = 0;
-            // 
-            // exitButton
-            // 
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitButton.Location = new System.Drawing.Point(770, 3);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(27, 23);
-            this.exitButton.TabIndex = 3;
-            this.exitButton.Text = "X";
-            this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.exitButton.UseCompatibleTextRendering = true;
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // listBoxEmployees
-            // 
-            this.listBoxEmployees.FormattingEnabled = true;
-            this.listBoxEmployees.Location = new System.Drawing.Point(365, 66);
-            this.listBoxEmployees.Name = "listBoxEmployees";
-            this.listBoxEmployees.Size = new System.Drawing.Size(234, 290);
-            this.listBoxEmployees.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(416, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Все сотрудники";
+            this.listBoxCompanies.SelectedIndexChanged += new System.EventHandler(this.listBoxCompanies_SelectedIndexChanged);
             // 
             // MainForm
             // 

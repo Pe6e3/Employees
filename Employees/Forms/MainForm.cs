@@ -1,5 +1,6 @@
 ﻿using Employees.Entities;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Employees
@@ -30,14 +31,20 @@ namespace Employees
         }
 
 
-        public void RefreshEmployeeList()
+        public void RefreshEmployeeList(int companyId = 0)
         {
             listBoxEmployees.Items.Clear();
             listBoxEmployees.DisplayMember = "Fullname";
-            var employees = _db.GetAllEmployees();
+            List<Employee> employees = new List<Employee>();
+
+            if (companyId != 0)
+                employees = _db.GetEmployeesOfCompany(companyId);
+            else
+                employees = _db.GetAllEmployees();
 
             foreach (var employee in employees)
                 listBoxEmployees.Items.Add(employee);
+
         }
 
 
@@ -66,6 +73,12 @@ namespace Employees
         {
             _db.CloseConnection();
             Application.Exit();
+        }
+
+        private void listBoxCompanies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
+            RefreshEmployeeList(selectedCompany.Id);
         }
     }
 }

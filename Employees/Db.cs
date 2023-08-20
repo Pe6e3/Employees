@@ -31,7 +31,6 @@ namespace Employees
         public List<Company> GetAllCompanies()
         {
             List<Company> companies = new List<Company>();
-
             string query = "SELECT Id, Name, INN, Address, Note FROM companies";
 
             using (MySqlCommand command = new MySqlCommand(query, GetConnection()))
@@ -105,6 +104,56 @@ namespace Employees
                     }
                 }
             }
+            return employees;
+        }
+
+        public List<Employee> GetEmployeesOfCompany(int companyId)
+        {
+            List<Employee> employees = new List<Employee>();
+            List<CompanyEmployee> companyEmployees = new List<CompanyEmployee>();
+            string queryEmployees = "SELECT * FROM employees";
+            string queryCompanyEmployees = "SELECT * FROM `companyemployees` WHERE `CompanyId` = @cId";
+
+            using (MySqlCommand command = new MySqlCommand(queryCompanyEmployees, GetConnection()))
+            {
+                command.Parameters.AddWithValue("@cId", companyId);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CompanyEmployee companyEmployee = new CompanyEmployee();
+                        companyEmployee.Id = Convert.ToInt32(reader["Id"]);
+                        companyEmployee.CompanyId = Convert.ToInt32(reader["CompanyId"]);
+                        companyEmployee.EmployeeId = Convert.ToInt32(reader["EmployeeId"]);
+                        companyEmployees.Add(companyEmployee);
+                    }
+                }
+            }
+
+            using (MySqlCommand command = new MySqlCommand(queryEmployees, GetConnection()))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Employee employee = new Employee();
+                        employee.Id = Convert.ToInt32(reader["ID"]);
+                        employee.FirstName = reader["FirstName"].ToString();
+                        employee.LastName = reader["LastName"].ToString();
+                        employee.MiddleName = reader["MiddleName"].ToString();
+                        employee.IIN = reader["IIN"].ToString();
+                        employee.Fullname = $"{employee.LastName} {employee.FirstName} {employee.MiddleName}";
+
+                        // перебираем таблицу связей компаний и сотрудников, и если Id сотрудника в этой таблице совпадает с Id сотрудника,
+                        // которого читаем в текущей строке таблицы всех сотрудников - добавляем его в итоговый список
+                        foreach (CompanyEmployee companyEmployee in companyEmployees)
+                            if (companyEmployee.EmployeeId == employee.Id)
+                                employees.Add(employee);
+                    }
+                }
+            }
+
             return employees;
         }
     }
