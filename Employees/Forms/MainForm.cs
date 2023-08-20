@@ -54,5 +54,10 @@ namespace Employees
 
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            db.CloseConnection();
+            Application.Exit();
+        }
     }
 }

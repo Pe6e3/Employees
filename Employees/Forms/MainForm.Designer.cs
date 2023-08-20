@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.listBoxCompanies = new System.Windows.Forms.ListBox();
-            this.addEmployee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.addEmployee = new System.Windows.Forms.Button();
+            this.listBoxCompanies = new System.Windows.Forms.ListBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
+            this.MainPanel.Controls.Add(this.exitButton);
             this.MainPanel.Controls.Add(this.label1);
             this.MainPanel.Controls.Add(this.addEmployee);
             this.MainPanel.Controls.Add(this.listBoxCompanies);
@@ -47,24 +49,6 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(800, 450);
             this.MainPanel.TabIndex = 0;
-            // 
-            // listBoxCompanies
-            // 
-            this.listBoxCompanies.FormattingEnabled = true;
-            this.listBoxCompanies.Location = new System.Drawing.Point(72, 66);
-            this.listBoxCompanies.Name = "listBoxCompanies";
-            this.listBoxCompanies.Size = new System.Drawing.Size(247, 290);
-            this.listBoxCompanies.TabIndex = 0;
-            // 
-            // addEmployee
-            // 
-            this.addEmployee.Location = new System.Drawing.Point(121, 362);
-            this.addEmployee.Name = "addEmployee";
-            this.addEmployee.Size = new System.Drawing.Size(146, 23);
-            this.addEmployee.TabIndex = 1;
-            this.addEmployee.Text = "Добавить сотрудника";
-            this.addEmployee.UseVisualStyleBackColor = true;
-            this.addEmployee.Click += new System.EventHandler(this.addEmployee_Click);
             // 
             // label1
             // 
@@ -76,14 +60,46 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Все компании";
             // 
+            // addEmployee
+            // 
+            this.addEmployee.Location = new System.Drawing.Point(121, 362);
+            this.addEmployee.Name = "addEmployee";
+            this.addEmployee.Size = new System.Drawing.Size(146, 23);
+            this.addEmployee.TabIndex = 1;
+            this.addEmployee.Text = "Добавить сотрудника";
+            this.addEmployee.UseVisualStyleBackColor = true;
+            this.addEmployee.Click += new System.EventHandler(this.addEmployee_Click);
+            // 
+            // listBoxCompanies
+            // 
+            this.listBoxCompanies.FormattingEnabled = true;
+            this.listBoxCompanies.Location = new System.Drawing.Point(72, 66);
+            this.listBoxCompanies.Name = "listBoxCompanies";
+            this.listBoxCompanies.Size = new System.Drawing.Size(247, 290);
+            this.listBoxCompanies.TabIndex = 0;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(770, 3);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(27, 23);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "X";
+            this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.exitButton.UseCompatibleTextRendering = true;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MainPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сотрудники компаний";
             this.TopMost = true;
             this.MainPanel.ResumeLayout(false);
@@ -99,6 +115,7 @@
         private System.Windows.Forms.ListBox listBoxCompanies;
         private System.Windows.Forms.Button addEmployee;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 

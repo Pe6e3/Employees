@@ -38,6 +38,7 @@
             this.IINLabel = new System.Windows.Forms.Label();
             this.surnameLabel = new System.Windows.Forms.Label();
             this.comboBoxCompany = new System.Windows.Forms.ComboBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // createNewEmployee
@@ -45,7 +46,7 @@
             this.createNewEmployee.Location = new System.Drawing.Point(150, 216);
             this.createNewEmployee.Name = "createNewEmployee";
             this.createNewEmployee.Size = new System.Drawing.Size(134, 23);
-            this.createNewEmployee.TabIndex = 0;
+            this.createNewEmployee.TabIndex = 6;
             this.createNewEmployee.Text = "Добавить сотрудника";
             this.createNewEmployee.UseVisualStyleBackColor = true;
             this.createNewEmployee.Click += new System.EventHandler(this.createNewEmployee_Click);
@@ -64,14 +65,14 @@
             this.nameField.Location = new System.Drawing.Point(161, 94);
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(173, 20);
-            this.nameField.TabIndex = 2;
+            this.nameField.TabIndex = 3;
             // 
             // surnameField
             // 
             this.surnameField.Location = new System.Drawing.Point(161, 69);
             this.surnameField.Name = "surnameField";
             this.surnameField.Size = new System.Drawing.Size(173, 20);
-            this.surnameField.TabIndex = 4;
+            this.surnameField.TabIndex = 2;
             // 
             // midNameField
             // 
@@ -85,7 +86,7 @@
             this.IINField.Location = new System.Drawing.Point(161, 149);
             this.IINField.Name = "IINField";
             this.IINField.Size = new System.Drawing.Size(173, 20);
-            this.IINField.TabIndex = 4;
+            this.IINField.TabIndex = 5;
             // 
             // midNameLabel
             // 
@@ -120,13 +121,28 @@
             this.comboBoxCompany.Location = new System.Drawing.Point(123, 22);
             this.comboBoxCompany.Name = "comboBoxCompany";
             this.comboBoxCompany.Size = new System.Drawing.Size(211, 21);
-            this.comboBoxCompany.TabIndex = 5;
+            this.comboBoxCompany.TabIndex = 1;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(416, 2);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(27, 23);
+            this.exitButton.TabIndex = 7;
+            this.exitButton.Text = "X";
+            this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.exitButton.UseCompatibleTextRendering = true;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(445, 302);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.comboBoxCompany);
             this.Controls.Add(this.surnameLabel);
             this.Controls.Add(this.IINLabel);
@@ -137,6 +153,7 @@
             this.Controls.Add(this.surnameField);
             this.Controls.Add(this.nameField);
             this.Controls.Add(this.createNewEmployee);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEmployeeForm";
@@ -157,5 +174,6 @@
         private System.Windows.Forms.Label IINLabel;
         private System.Windows.Forms.Label surnameLabel;
         private System.Windows.Forms.ComboBox comboBoxCompany;
+        private System.Windows.Forms.Button exitButton;
     }
 }

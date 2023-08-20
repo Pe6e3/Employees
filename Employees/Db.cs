@@ -13,7 +13,6 @@ namespace Employees
         {
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
-
         }
         public void CloseConnection()
         {
@@ -71,7 +70,6 @@ namespace Employees
                 command.ExecuteNonQuery();
 
                 employeeId = (int)command.LastInsertedId;// Получаем Id только что созданного сотрудника
-                CloseConnection();
             }
 
             if (companyId != 0)
@@ -83,8 +81,6 @@ namespace Employees
                     command.Parameters.AddWithValue("@companyId", companyId);
                     command.Parameters.AddWithValue("@employeeId", employeeId);
                     command.ExecuteNonQuery();
-
-                    CloseConnection();
                 }
             }
         }

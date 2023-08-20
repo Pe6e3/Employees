@@ -98,27 +98,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployeeForm.cs">
+    <Compile Include="Forms\AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEmployeeForm.Designer.cs">
+    <Compile Include="Forms\AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Db.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Person.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddEmployeeForm.resx">
+    <EmbeddedResource Include="Forms\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
