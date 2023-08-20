@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Employees.Helpers
@@ -44,5 +45,7 @@ namespace Employees.Helpers
                 lastPoint = new Point(e.X, e.Y);
             };
         }
+
+ 
     }
 }

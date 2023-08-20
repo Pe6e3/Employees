@@ -195,7 +195,7 @@ namespace Employees
 ";
             if (companyId == 0)
                 queryDeleteByCompanyId = @"
-                            DELETE e.*
+                            DELETE e, ce.*
                             FROM `employees` e
                             JOIN `companyemployees` ce ON e.Id = ce.EmployeeId";
 

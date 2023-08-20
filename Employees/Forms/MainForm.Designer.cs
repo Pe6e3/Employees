@@ -117,6 +117,7 @@
             // 
             this.deleteEmployee.BackColor = System.Drawing.Color.Coral;
             this.deleteEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteEmployee.Enabled = false;
             this.deleteEmployee.Location = new System.Drawing.Point(12, 401);
             this.deleteEmployee.Name = "deleteEmployee";
             this.deleteEmployee.Size = new System.Drawing.Size(266, 26);
@@ -230,6 +231,7 @@
             // 
             this.importCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.importCSV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.importCSV.Enabled = false;
             this.importCSV.Location = new System.Drawing.Point(113, 345);
             this.importCSV.Name = "importCSV";
             this.importCSV.Size = new System.Drawing.Size(83, 50);
@@ -295,6 +297,7 @@
             // 
             this.addEmployee.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.addEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addEmployee.Enabled = false;
             this.addEmployee.Location = new System.Drawing.Point(19, 345);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(83, 50);

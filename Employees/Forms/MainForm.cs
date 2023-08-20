@@ -73,12 +73,32 @@ namespace Employees
             RefreshEmployeeList(selectedCompany.Id);
             RefreshCompanyCard(selectedCompany);
             employeeCompanyLabel.Text = $"Сотрудники компании\n{selectedCompany.Name}";
+
+            CheckCompanySelection();
+        }
+
+        private void CheckCompanySelection()
+        {
+            // Проверяем, есть ли выбранная компания
+            bool itemSelected = listBoxCompanies.SelectedItems.Count > 0;
+            // Включаем или отключаем кнопки "importCSV" и "Добавить сотрудника" в зависимости от наличия выбранного пункта
+            importCSV.Enabled = itemSelected;
+            addEmployee.Enabled = itemSelected;
+        }
+
+        private void CheckEmployeeSelection()
+        {
+            // Проверяем, есть ли выбранный Сотрудник
+            bool itemSelected = listBoxEmployees.SelectedItems.Count > 0;
+            // Включаем или отключаем кнопку "Удалить выбранного сотрудника" в зависимости от наличия выбранного пункта
+            deleteEmployee.Enabled = itemSelected;
         }
 
         private void listBoxEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
             Employee selectedEmployee = (Employee)listBoxEmployees.SelectedItem;
             RefreshEmployeeCard(selectedEmployee);
+            CheckEmployeeSelection();
         }
 
         private void RefreshEmployeeCard(Employee selectedEmployee)
@@ -89,6 +109,7 @@ namespace Employees
             midnameField.Text = selectedEmployee.MiddleName;
             iinField.Text = selectedEmployee.IIN;
             _tempEmployeeId = selectedEmployee.Id;
+
         }
 
         private void RefreshCompanyCard(Company selectedCompany)
@@ -105,6 +126,7 @@ namespace Employees
             lastnameField.Text = "";
             midnameField.Text = "";
             iinField.Text = "";
+            CheckEmployeeSelection();
         }
         private void ClearCompanyCard()
         {
@@ -254,7 +276,9 @@ namespace Employees
         {
             RefreshEmployeeList();
             ClearCompanyCard();
+            ClearEmployeeCard();
             employeeCompanyLabel.Text = "Все Сотрудники";
+            CheckCompanySelection();
         }
     }
 }
