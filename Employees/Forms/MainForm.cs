@@ -125,5 +125,41 @@ namespace Employees
             _db.CloseConnection();
             Application.Exit();
         }
+
+        private void exportCSV_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                saveFileDialog.Title = "Выберите место для сохранения CSV файла";
+                Company selectedCompany = (Company)listBoxCompanies.SelectedItem;
+                if (selectedCompany != null)  // задаем имя для сохранения файла
+                    saveFileDialog.FileName = selectedCompany.Name;
+                else
+                    saveFileDialog.FileName = "Все сотрудники";
+
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string csvContent = "Id,Fullname,FirstName,LastName,MiddleName,IIN\n";
+
+                    foreach (var item in listBoxEmployees.Items)
+                    {
+                        var employee = (Employee)item;
+
+                        string employeeCsvLine = $"{employee.Id},{employee.Fullname},{employee.FirstName},{employee.LastName},{employee.MiddleName},{employee.IIN}";
+                        csvContent += employeeCsvLine + "\n";
+                    }
+
+                    string csvFilePath = saveFileDialog.FileName;
+                    System.IO.File.WriteAllText(csvFilePath, csvContent);
+
+                    MessageBox.Show("Список сотрудников успешно экспортирован в CSV файл.");
+                }
+            }
+        }
+
+
+
     }
 }

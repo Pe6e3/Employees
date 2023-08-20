@@ -56,6 +56,7 @@
             this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.newCompanyButton = new System.Windows.Forms.Button();
             this.employeeLabelsPanel = new System.Windows.Forms.Panel();
+            this.exportCSV = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.employeeCardPanel.SuspendLayout();
             this.employeePanel.SuspendLayout();
@@ -186,6 +187,7 @@
             // employeePanel
             // 
             this.employeePanel.BackColor = System.Drawing.Color.PeachPuff;
+            this.employeePanel.Controls.Add(this.exportCSV);
             this.employeePanel.Controls.Add(this.employeeLabelsPanel);
             this.employeePanel.Controls.Add(this.listBoxEmployees);
             this.employeePanel.Controls.Add(this.addEmployee);
@@ -219,7 +221,7 @@
             // 
             this.addEmployee.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.addEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee.Location = new System.Drawing.Point(75, 396);
+            this.addEmployee.Location = new System.Drawing.Point(19, 396);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(146, 33);
             this.addEmployee.TabIndex = 1;
@@ -392,6 +394,18 @@
             this.employeeLabelsPanel.Size = new System.Drawing.Size(300, 54);
             this.employeeLabelsPanel.TabIndex = 6;
             // 
+            // exportCSV
+            // 
+            this.exportCSV.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.exportCSV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exportCSV.Location = new System.Drawing.Point(190, 396);
+            this.exportCSV.Name = "exportCSV";
+            this.exportCSV.Size = new System.Drawing.Size(95, 33);
+            this.exportCSV.TabIndex = 7;
+            this.exportCSV.Text = "экспорт в CSV";
+            this.exportCSV.UseVisualStyleBackColor = false;
+            this.exportCSV.Click += new System.EventHandler(this.exportCSV_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,6 +461,7 @@
         private System.Windows.Forms.Panel employeeCardPanel;
         private System.Windows.Forms.Button newCompanyButton;
         private System.Windows.Forms.Panel employeeLabelsPanel;
+        private System.Windows.Forms.Button exportCSV;
     }
 }
 
