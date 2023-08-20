@@ -270,13 +270,13 @@ namespace Employees
         {
             _db.DeleteEmployee(_tempEmployeeId);
             RefreshEmployeeList(_tempCompanyId);
+            ClearEmployeeCard();
         }
 
         private void resetCompany_Click(object sender, EventArgs e)
         {
             RefreshEmployeeList();
             ClearCompanyCard();
-            ClearEmployeeCard();
             employeeCompanyLabel.Text = "Все Сотрудники";
             CheckCompanySelection();
         }
