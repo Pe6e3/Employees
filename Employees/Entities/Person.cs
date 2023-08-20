@@ -7,5 +7,6 @@
         public string LastName { get; set; }
         public string MiddleName { get; set; }
         public string IIN { get; set; }
+        public string Fullname { get; set; }
     }
 }

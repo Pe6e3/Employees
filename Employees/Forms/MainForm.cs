@@ -6,7 +6,7 @@ namespace Employees
 {
     public partial class MainForm : Form
     {
-        private readonly Db db = new Db();
+        private readonly Db _db = new Db();
 
         public MainForm()
         {
@@ -17,18 +17,27 @@ namespace Employees
         private void MainForm_Load(object sender, EventArgs e)
         {
             RefreshCompanyList();
+            RefreshEmployeeList();
         }
         private void RefreshCompanyList()
         {
             listBoxCompanies.Items.Clear();
-
-            // Указываем, какое свойство использовать для отображения имени компании
             listBoxCompanies.DisplayMember = "Name";
+            var companies = _db.GetAllCompanies();
 
-            var companies = db.GetCompanyNames();
             foreach (var company in companies)
                 listBoxCompanies.Items.Add(company);
+        }
 
+
+        public void RefreshEmployeeList()
+        {
+            listBoxEmployees.Items.Clear();
+            listBoxEmployees.DisplayMember = "Fullname";
+            var employees = _db.GetAllEmployees();
+
+            foreach (var employee in employees)
+                listBoxEmployees.Items.Add(employee);
         }
 
 
@@ -51,12 +60,11 @@ namespace Employees
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm(selectedCompanyId);
             this.Hide();
             addEmployeeForm.Show();
-
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            db.CloseConnection();
+            _db.CloseConnection();
             Application.Exit();
         }
     }

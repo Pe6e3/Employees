@@ -28,7 +28,7 @@ namespace Employees
         }
 
 
-        public List<Company> GetCompanyNames()
+        public List<Company> GetAllCompanies()
         {
             List<Company> companies = new List<Company>();
 
@@ -51,7 +51,6 @@ namespace Employees
                     }
                 }
             }
-
             return companies;
         }
 
@@ -83,6 +82,30 @@ namespace Employees
                     command.ExecuteNonQuery();
                 }
             }
+        }
+
+        public List<Employee> GetAllEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+            string queryEmployees = "SELECT * FROM employees";
+            using (MySqlCommand command = new MySqlCommand(queryEmployees, GetConnection()))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Employee employee = new Employee();
+                        employee.Id = Convert.ToInt32(reader["ID"]);
+                        employee.FirstName = reader["FirstName"].ToString();
+                        employee.LastName = reader["LastName"].ToString();
+                        employee.MiddleName = reader["MiddleName"].ToString();
+                        employee.IIN = reader["IIN"].ToString();
+                        employee.Fullname = $"{employee.LastName} {employee.FirstName} {employee.MiddleName}";
+                        employees.Add(employee);
+                    }
+                }
+            }
+            return employees;
         }
     }
 }

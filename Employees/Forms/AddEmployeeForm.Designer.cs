@@ -43,6 +43,7 @@
             // 
             // createNewEmployee
             // 
+            this.createNewEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.createNewEmployee.Location = new System.Drawing.Point(150, 216);
             this.createNewEmployee.Name = "createNewEmployee";
             this.createNewEmployee.Size = new System.Drawing.Size(134, 23);
@@ -141,6 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(445, 302);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.comboBoxCompany);

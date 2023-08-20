@@ -31,7 +31,7 @@ namespace Employees
         private void FillCompanyComboBox()
         {
             // Получаем список всех компаний
-            List<Company> companies = _db.GetCompanyNames();
+            List<Company> companies = _db.GetAllCompanies();
 
             // Привязываем список компаний к ComboBox
             comboBoxCompany.DataSource = companies;
